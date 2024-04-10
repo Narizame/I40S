@@ -25,11 +25,11 @@
             "file:///home/I40S/.config/conky/Regulus": "__default__profile__",
             "file:///home/I40S/.hyprland": "__default__profile__",
             "file:///home/I40S/.config/kde.org": "__default__profile__",
-            "file:///home/I40S/.config": "__default__profile__",
             "file:///home/I40S/.config/rofi": "__default__profile__",
             "file:///home/I40S/.config/eww": "__default__profile__",
             "file:///home/I40S/.config/hypr": "__default__profile__",
-            "file:///home/I40S/iso/I40ST": "__default__profile__"
+            "file:///home/I40S/iso/I40ST": "__default__profile__",
+            "file:///home/I40S/.config": "__default__profile__"
         },
         "emptyWindows": {}
     },
@@ -40,10 +40,7 @@
         "workspaces": [],
         "folders": [
             {
-                "folderUri": "file:///home/I40S/.config/hypr"
-            },
-            {
-                "folderUri": "file:///home/I40S/iso/I40ST"
+                "folderUri": "file:///home/I40S/.config"
             }
         ],
         "emptyWindows": []
@@ -1752,8 +1749,8 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/I40S/iso/I40ST",
-            "backupPath": "/home/I40S/.config/Code/Backups/b3688989be43eb8bd6cbcf9bf63d5e9b",
+            "folder": "file:///home/I40S/.config",
+            "backupPath": "/home/I40S/.config/Code/Backups/e080052459da43efa2bfecb77bf6bcc0",
             "uiState": {
                 "mode": 1,
                 "x": 1931,
