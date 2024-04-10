@@ -1,3 +1,8 @@
 2024-04-10 21:58:31.821 [info] update#setState idle
 2024-04-10 21:59:01.822 [info] update#setState checking for updates
 2024-04-10 21:59:01.880 [info] update#setState idle
+2024-04-10 22:01:04.871 [error] [storage state.vscdb] prepare(): Error: SQLITE_READONLY_DBMOVED: attempt to write a readonly database (INSERT INTO ItemTable VALUES (?,?),(?,?)). Details: Keys: terminal.history.entries.commands, terminal.history.timestamp.commands Length: 4019
+2024-04-10 22:01:12.672 [error] [storage state.vscdb] prepare(): Error: SQLITE_READONLY_DBMOVED: attempt to write a readonly database (INSERT INTO ItemTable VALUES (?,?),(?,?)). Details: Keys: terminal.history.entries.commands, terminal.history.timestamp.commands Length: 4019
+2024-04-10 22:03:39.586 [error] [storage state.vscdb] prepare(): Error: SQLITE_READONLY_DBMOVED: attempt to write a readonly database (INSERT INTO ItemTable VALUES (?,?),(?,?)). Details: Keys: terminal.history.entries.commands, terminal.history.timestamp.commands Length: 4019
+2024-04-10 22:03:59.113 [error] [storage state.vscdb] prepare(): Error: SQLITE_READONLY_DBMOVED: attempt to write a readonly database (INSERT INTO ItemTable VALUES (?,?),(?,?)). Details: Keys: terminal.history.entries.commands, terminal.history.timestamp.commands Length: 4064
+2024-04-10 22:04:08.699 [error] [storage state.vscdb] prepare(): Error: SQLITE_READONLY_DBMOVED: attempt to write a readonly database (INSERT INTO ItemTable VALUES (?,?),(?,?)). Details: Keys: terminal.history.entries.commands, terminal.history.timestamp.commands Length: 4064
