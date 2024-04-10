@@ -1,0 +1,7 @@
+{
+    "workbench.colorTheme": "Default Light Modern",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.preferredDarkColorTheme": "Wal Bordered",
+    "workbench.preferredHighContrastColorTheme": "Wal Bordered",
+    "window.autoDetectColorScheme": true
+}

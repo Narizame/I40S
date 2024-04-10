@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalresult</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap">
+</head>
+
+<body onload="load()" style="font-family: 'Poppins', sans-serif;">
+    <!--HEADER-->
+    <header class="col-12 position-relative w-100 top-0 m-0 start-0 d-flex justify-content-between overflow-hidden"
+        id="top-navigation" style="background-color: #202020;">
+        <!--LQVA CHAST HEADER-->
+        <div class="d-flex align-content-middle my-auto ms-3" style="cursor: pointer;">
+            <p class="h-100 fs-1 p-0 my-auto" style="color: #E1B02E;"><i
+                    class="bi bi-car-front-fill fs-1 mx-2"></i>CarTrek
+            </p>
+        </div>
+
+        <!--DQSNA CHAST HEADER-->
+        <div class="pe-md-2 m-3 d-md-flex d-none align-items-center">
+            <button class="btn mx-2 btn-lg fw-medium" type="button" id="filter-btn"
+                style="border: 2px solid #E1B02E; color: #E1B02E;"
+                onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';"
+                data-bs-toggle="modal" data-bs-target="#date-filter" onclick="restartFilter();">Dates
+                <i class="bi bi-calendar-check-fill ps-1"></i>
+            </button>
+
+            <button class="btn mx-2 btn-lg bi bi-person-circle" style="border: 2px solid #E1B02E; color: #E1B02E;"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                aria-controls="offcanvasWithBothOptions"
+                onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';">
+            </button>
+        </div>
+
+        <div class="pe-md-5 m-3 d-flex d-md-none align-items-center">
+            <button class="btn mx-2 btn-lg bi bi-list-ul" style="border: 2px solid #E1B02E; color: #E1B02E;"
+                onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';"
+                type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"></button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"
+                style="background-color: #202020;">
+                <div class="offcanvas-header">
+                    <h3 class="offcanvas-title" id="offcanvasRightLabel">
+                        <p class="h-100 fs-1 p-0 my-auto" style="color: #E1B02E;"><i
+                                class="bi bi-car-front-fill fs-1 mx-2"></i>CarTrek
+                        </p>
+                    </h3>
+                    <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                        <i class="bi bi-x fs-1" style="color: #E1B02E;"></i>
+                    </button>
+                </div>
+                <div class="offcanvas-body d-flex flex-column">
+                    <button class="btn m-2 btn-lg fw-medium" type="button" id="filter-btn-side"
+                        style="border: 2px solid #E1B02E; color: #E1B02E;"
+                        onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                        onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';"
+                        data-bs-toggle="modal" data-bs-target="#date-filter" onclick="restartFilter();">Dates
+                        <i class="bi bi-calendar-check-fill ps-1"></i>
+                    </button>
+
+                    <button class="btn m-2 btn-lg bi bi-person-circle"
+                        style="border: 2px solid #E1B02E; color: #E1B02E;" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"
+                        onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                        onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!--ACCOUNTS-->
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel" style="background-color: #202020;">
+            <div class="offcanvas-header w-100 d-flex" style="height: 100px; border-bottom: 2px solid #E1B02E;">
+                <!--DALI E DOSTATYCHNO INTUITIVNO BEZ X BUTON-->
+
+                <div class="d-flex align-middle justify-content-between">
+                    <div class="d-block">
+                        <p class="my-1" style="color: #E1B02E;">Име Фамилия</p>
+                        <p class="my-1" style="color: #E1B02E;">e-mail</p>
+                    </div>
+                </div>
+                <button type="button" class="btn d-block d-md-none" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="bi bi-x fs-1" style="color: #E1B02E;"></i>
+                </button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column">
+                <button class="btn m-2 btn-lg" style="border: 2px solid #E1B02E; color: #E1B02E;"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                    aria-controls="offcanvasWithBothOptions"
+                    onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                    onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';">
+                    History
+                </button>
+                <button class="btn m-2 btn-lg" style="border: 2px solid #E1B02E; color: #E1B02E;"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                    aria-controls="offcanvasWithBothOptions"
+                    onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                    onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';">
+                    Log out <i class="bi bi-person-circle ps-1"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!--Date Modal-->
+    <div class="modal fade" id="date-filter" tabindex="-1" aria-labelledby="date-filterLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-lg-down">
+            <div class="modal-content d-block">
+                <div class="modal-header" style="background-color: #202020;">
+                    <h1 class="modal-title fs-3 ms-3" id="date-filterLabel" style="color: #E1B02E;">Filters</h1>
+                    <button type="button" class="btn p-0" data-bs-dismiss="modal" aria-label="Close"
+                        id="close-filter"><i class="bi bi-x fs-1" style="color: #E1B02E;"></i></button>
+                </div>
+                <div class="modal-body d-flex" style="background-color: #EDEDEB; border-radius: 2px;">
+                    <!--Calendar-->
+                    <div class="col-6 col-md-7 me-md-5 me-1">
+                        <p class="fs-1" style="color: 000000;">Date:</p>
+                        <div class="justify-content-center">
+                            <!--Today-->
+                            <div class="d-flex justify-content-between" id="today" onclick="setToday();">
+                                <div class="col-3 justify-content-center text-center py-3 fw-bold"
+                                    style="background-color: #E1B02E;" id="todays-date"></div>
+                                <div class="col-3 justify-content-center text-center py-3 fw-bold"
+                                    style="background-color: #ebc96d;" id="todays-month"></div>
+                                <div class="col-6 justify-content-center text-center py-3 fw-bold"
+                                    style="background-color: #eedeb0;" id="todays-year"></div>
+                            </div>
+                            <!--Tomorrow-->
+                            <div class="d-flex justify-content-between opacity-50" id="tomorrow"
+                                onclick="setTomorrow();">
+                                <div class="col-3 justify-content-center text-center py-3 fw-bold"
+                                    style="background-color: #E1B02E;" id="tomorrows-date"></div>
+                                <div class="col-3 justify-content-center text-center py-3 fw-bold"
+                                    style="background-color: #ebc96d;" id="tomorrows-month"></div>
+                                <div class="col-6 justify-content-center text-center py-3 fw-bold"
+                                    style="background-color: #eedeb0;" id="tomorrows-year"></div>
+                            </div>
+                            <!--Buttons-->
+                            <div class="my-2 mt-3 w-100 d-flex justify-content-center">
+                                <button type="button" class="btn me-1" id="btn-today"
+                                    style="background-color: #202020; border-color: #202020; color: #E6BD4C;"
+                                    onclick="setToday();">Today</button>
+                                <button type="button" class="btn ms-1" id="btn-tomorrow"
+                                    style="background-color: #E6BD4C; border-color: #202020; color: #000000;"
+                                    onclick="setTomorrow();">Tomorrow</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Hours-->
+                    <div class="col-5 ms-2 d-flex flex-column justify-content-center">
+                        <p class="fs-1 mb-0">Set Time:</p>
+                        <div class="d-flex flex-column flex-lg-row justify-content-center">
+                            <p class="fs-4 mb-0 col-2">From:</p>
+                            <!--par == 1, a.k.a. From:-->
+                            <div class="d-flex w-100 justify-content-center">
+                                <div class="d-flex flex-column justify-content-center mx-1">
+                                    <div onclick="upH(1);"><i class="px-1 fs-4 bi bi-caret-up" id="arrow-upH"
+                                            style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i></div>
+                                    <p class="fs-5 px-1 border my-0" id="hour-text" contenteditable
+                                        onkeyup="checkHourFormat(this.innerText, this, 0);">07</p>
+                                    <div onclick="downH(1);"><i class="px-1 fs-4 bi bi-caret-down-fill" id="arrow-downH"
+                                            style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-content-middle my-auto">
+                                    <p class="fs-5 border px-2 my-0">:</p>
+                                </div>
+                                <div class="d-flex flex-column mx-1">
+                                    <div onclick="upM(1);"><i class="px-1 fs-4 bi bi-caret-up" id="arrow-upM"
+                                            style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i></div>
+                                    <p class="fs-5 px-1 border my-0" id="mins-text" contenteditable
+                                        onkeyup="checkMinFormat(this.innerText, this, 0, document.getElementById('mins-text2'));">
+                                        00</p>
+                                    <div onclick="downM(1);"><i class="px-1 fs-4 bi bi-caret-down-fill" id="arrow-downM"
+                                            style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-1 d-flex flex-column flex-lg-row justify-content-center">
+                            <p class="fs-4 mb-0 col-2">To:</p>
+                            <!--par == 2, a.k.a. To:-->
+                            <div class="d-flex w-100 justify-content-center">
+                                <div class="d-flex flex-column justify-content-center mx-1">
+                                    <div onclick="upH(2);"><i class="px-1 fs-4 bi bi-caret-up" id="arrow-upH2"
+                                            style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i>
+                                    </div>
+                                    <p class="fs-5 px-1 border my-0" id="hour-text2" contenteditable
+                                        onkeyup="checkHourFormat(this.innerText, this, 1);">07</p>
+                                    <div onclick="downH(2);"><i class="px-1 fs-4 bi bi-caret-down-fill"
+                                            id="arrow-downH2" style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i></div>
+                                </div>
+                                <div class="d-flex align-content-middle my-auto">
+                                    <p class="fs-5 border px-2 my-0">:</p>
+                                </div>
+                                <div class="d-flex flex-column mx-1">
+                                    <div onclick="upM(2);"><i class="px-1 fs-4 bi bi-caret-up" id="arrow-upM2"
+                                            style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i>
+                                    </div>
+                                    <p class="fs-5 px-1 border my-0" id="mins-text2" contenteditable
+                                        onkeyup="checkMinFormat(this.innerText, this, 1, document.getElementById('mins-text'));">
+                                        00</p>
+                                    <div onclick="downM(2);"><i class="px-1 fs-4 bi bi-caret-down-fill"
+                                            id="arrow-downM2" style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="background-color: #202020;">
+                    <button type="button" class="btn" onclick="applyingFilters();"
+                        style="background-color: #E6BD4C; border-color: #000000; color: #000000;">Apply filters</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Function to validate numeric input
+        function validateNumericInput(input, element) {
+            if (isNaN(input) || input < 0) {
+                element.classList.add('bg-danger', 'text-light');
+                return false;
+            } else {
+                element.classList.remove('bg-danger', 'text-light');
+                return true;
+            }
+        }
+
+        // Function to handle input events and allow only numeric input
+        function handleNumericInput(event, element) {
+            let inputValue = event.target.value;
+            // Remove non-numeric characters
+            let numericValue = inputValue.replace(/[^0-9]/g, '');
+            // Update the input value
+            event.target.value = numericValue;
+            // Validate the numeric input
+            validateNumericInput(numericValue, element);
+        }
+
+        function load() {
+            setDate();
+            setToday();
+        }
+
+        //DATE
+        var btn_today = document.getElementById('btn-today');
+        var btn_tomorrow = document.getElementById('btn-tomorrow');
+        var today = document.getElementById('today');
+        var tomorrow = document.getElementById('tomorrow');
+
+        var todayDate;
+        var tomorrowDate;
+        var todaybool = true;
+
+        /*Get Date*/
+        function setDate() {
+            document.getElementById('filter-btn').click();
+            const date = new Date();
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            todayDate = (String(day).padStart(2, '0')) + "/" + (String(month).padStart(2, '0')) + "/" + (String(year).padStart(4, '0'));
+
+            document.getElementById('todays-date').innerHTML = (String(day).padStart(2, '0'));
+            document.getElementById('todays-month').innerHTML = (String(month).padStart(2, '0'));
+            document.getElementById('todays-year').innerHTML = (String(year).padStart(4, '0'));
+
+            var currentDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+            day = currentDate.getDate();
+            month = currentDate.getMonth() + 1;
+            year = currentDate.getFullYear();
+            tomorrowDate = (String(day).padStart(2, '0')) + "/" + (String(month).padStart(2, '0')) + "/" + (String(year).padStart(4, '0'));
+
+            document.getElementById('tomorrows-date').innerHTML = (String(day).padStart(2, '0'));
+            document.getElementById('tomorrows-month').innerHTML = (String(month).padStart(2, '0'));
+            document.getElementById('tomorrows-year').innerHTML = (String(year).padStart(4, '0'));
+        }
+
+        function setToday() {
+            todaybool = true;
+            /*Activate Today btn*/
+            btn_today.style.backgroundColor = '#202020';
+            btn_today.style.borderBlockColor = '#202020';
+            btn_today.style.color = '#E6BD4C';
+            today.classList.remove('opacity-50');
+
+            /*Deactivate Tomorrow btn*/
+            btn_tomorrow.style.backgroundColor = '#E6BD4C';
+            btn_tomorrow.style.borderBlockColor = '#202020';
+            btn_tomorrow.style.color = '#000000';
+            tomorrow.classList.add('opacity-50');
+
+        }
+        function setTomorrow() {
+            todaybool = false;
+            /*Deactivate Today btn*/
+            btn_today.style.backgroundColor = '#E6BD4C';
+            btn_today.style.borderBlockColor = '#202020';
+            btn_today.style.color = '#000000';
+            today.classList.add('opacity-50');
+
+            /*Activate Tomorrow btn*/
+            btn_tomorrow.style.backgroundColor = '#202020';
+            btn_tomorrow.style.borderBlockColor = '#202020';
+            btn_tomorrow.style.color = '#E6BD4C';
+            tomorrow.classList.remove('opacity-50');
+        }
+
+        //HOURS
+        var hour_text = document.getElementById('hour-text');
+        var mins_text = document.getElementById('mins-text');
+        var arrow_upH = document.getElementById('arrow-upH');
+        var arrow_downH = document.getElementById('arrow-downH');
+        var arrow_upM = document.getElementById('arrow-upM');
+        var arrow_downM = document.getElementById('arrow-downM');
+
+        var hour_text2 = document.getElementById('hour-text2');
+        var mins_text2 = document.getElementById('mins-text2');
+        var arrow_upH2 = document.getElementById('arrow-upH2');
+        var arrow_downH2 = document.getElementById('arrow-downH2');
+        var arrow_upM2 = document.getElementById('arrow-upM2');
+        var arrow_downM2 = document.getElementById('arrow-downM2');
+
+        var hour = 7;
+        var min = 0;
+        var hour2 = 7;
+        var min2 = 0;
+
+        function checkHourFormat(input, element, index) {
+            handleNumericInput(input, element);
+            if ((input < 7 || input > 20)) {
+                element.classList.add('bg-danger', 'text-light');
+            }
+            else {
+                element.classList.remove('bg-danger', 'text-light');
+                if (index == 0) {
+                    hour = input;
+                    if (hour == 7) {
+                        arrow_upH.classList.add('bi-caret-up');
+                        arrow_upH.classList.remove('bi-caret-up-fill');
+                    }
+                    else {
+                        arrow_downH.classList.add('bi-caret-down-fill');
+                        arrow_downH.classList.remove('bi-caret-down');
+                    }
+
+                    if (hour == 20) {
+                        arrow_downH.classList.add('bi-caret-down');
+                        arrow_downH.classList.remove('bi-caret-down-fill');
+
+                    }
+                    else {
+                        arrow_upH.classList.add('bi-caret-up-fill');
+                        arrow_upH.classList.remove('bi-caret-up');
+                    }
+                }
+                else if (index == 1) {
+                    hour2 = input;
+                    if (arrow_downH2.classList == "px-1 fs-4 bi bi-caret-down") {
+                        arrow_downH2.classList.add('bi-caret-down-fill');
+                        arrow_downH2.classList.remove('bi-caret-down');
+                    }
+                    if (hour2 == 7) {
+                        arrow_upH2.classList.add('bi-caret-up');
+                        arrow_upH2.classList.remove('bi-caret-up-fill');
+                    }
+                    if (arrow_upH2.classList == "px-1 fs-4 bi bi-caret-up") {
+                        arrow_upH2.classList.add('bi-caret-up-fill');
+                        arrow_upH2.classList.remove('bi-caret-up');
+                    }
+                    if (hour2 == 20) {
+                        arrow_downH2.classList.add('bi-caret-down');
+                        arrow_downH2.classList.remove('bi-caret-down-fill');
+
+                    }
+
+                }
+            }
+        }
+
+        function checkMinFormat(input, element, index, element2) {
+            if (index == 0) {
+                min = input;
+                if (min == 0) {
+                    arrow_upM.classList.add('bi-caret-up');
+                    arrow_upM.classList.remove('bi-caret-up-fill');
+                }
+                else {
+                    arrow_downM.classList.add('bi-caret-down-fill');
+                    arrow_downM.classList.remove('bi-caret-down');
+                }
+
+                if (min == 60 || min > 59) {
+                    arrow_downM.classList.add('bi-caret-down');
+                    arrow_downM.classList.remove('bi-caret-down-fill');
+                }
+                else {
+                    arrow_upM.classList.add('bi-caret-up-fill');
+                    arrow_upM.classList.remove('bi-caret-up');
+                }
+            }
+            else if (index == 1) {
+                min2 = input;
+                if (min2 == 0) {
+                    arrow_upM2.classList.add('bi-caret-up');
+                    arrow_upM2.classList.remove('bi-caret-up-fill');
+                }
+                else {
+                    arrow_downM2.classList.add('bi-caret-down-fill');
+                    arrow_downM2.classList.remove('bi-caret-down');
+                }
+
+                if (min2 == 45) {
+                    arrow_downM2.classList.add('bi-caret-down');
+                    arrow_downM2.classList.remove('bi-caret-down-fill');
+
+                }
+                else {
+                    arrow_upM2.classList.add('bi-caret-up-fill');
+                    arrow_upM2.classList.remove('bi-caret-up');
+                }
+            }
+
+            if (Math.abs(min2 - min) % 5 != 0) { //SET-NAH GO PREZ 5 MINUTOV INTREVAL ZA VYVEJDANE OT KLAVIATURA
+                element.classList.add('bg-danger', 'text-light');
+            }
+            else {
+                element.classList.remove('bg-danger', 'text-light');
+                element2.classList.remove('bg-danger', 'text-light');
+            }
+        }
+
+        function upH(par) {
+            if (par == 1) {
+                if (hour != 7) {
+                    hour--;
+                    hour_text.innerText = (String(hour).padStart(2, '0'));
+                    if (arrow_downH.classList == "px-1 fs-4 bi bi-caret-down") {
+                        arrow_downH.classList.add('bi-caret-down-fill');
+                        arrow_downH.classList.remove('bi-caret-down');
+                    }
+                    if (hour == 7) {
+                        arrow_upH.classList.add('bi-caret-up');
+                        arrow_upH.classList.remove('bi-caret-up-fill');
+                    }
+                }
+            }
+            else if (par == 2) {
+                if (hour2 != 7) {
+                    hour2--;
+                    hour_text2.innerText = (String(hour2).padStart(2, '0'));
+                    if (arrow_downH2.classList == "px-1 fs-4 bi bi-caret-down") {
+                        arrow_downH2.classList.add('bi-caret-down-fill');
+                        arrow_downH2.classList.remove('bi-caret-down');
+                    }
+                    if (hour2 == 7) {
+                        arrow_upH2.classList.add('bi-caret-up');
+                        arrow_upH2.classList.remove('bi-caret-up-fill');
+                    }
+                }
+            }
+        }
+
+        function downH(par) {
+            if (par == 1) {
+                if (hour != 20) {
+                    hour++;
+                    hour_text.innerText = (String(hour).padStart(2, '0'));
+                    if (arrow_upH.classList == "px-1 fs-4 bi bi-caret-up") {
+                        arrow_upH.classList.add('bi-caret-up-fill');
+                        arrow_upH.classList.remove('bi-caret-up');
+                    }
+                    if (hour == 20) {
+                        arrow_downH.classList.add('bi-caret-down');
+                        arrow_downH.classList.remove('bi-caret-down-fill');
+
+                    }
+                }
+            }
+            else if (par == 2) {
+                if (hour2 != 20) {
+                    hour2++;
+                    hour_text2.innerText = (String(hour2).padStart(2, '0'));
+                    if (arrow_upH2.classList == "px-1 fs-4 bi bi-caret-up") {
+                        arrow_upH2.classList.add('bi-caret-up-fill');
+                        arrow_upH2.classList.remove('bi-caret-up');
+                    }
+                    if (hour2 == 20) {
+                        arrow_downH2.classList.add('bi-caret-down');
+                        arrow_downH2.classList.remove('bi-caret-down-fill');
+
+                    }
+                }
+            }
+        }
+
+        function upM(par) {
+            if (par == 1) {
+                if (min != 0) {
+                    min -= 15;
+                    mins_text.innerText = (String(min).padStart(2, '0'));
+                    if (arrow_downM.classList == "px-1 fs-4 bi bi-caret-down") {
+                        arrow_downM.classList.add('bi-caret-down-fill');
+                        arrow_downM.classList.remove('bi-caret-down');
+                    }
+                    if (min == 0) {
+                        arrow_upM.classList.add('bi-caret-up');
+                        arrow_upM.classList.remove('bi-caret-up-fill');
+                    }
+                }
+            }
+            else if (par == 2) {
+                if (min2 != 0) {
+                    min2 -= 15;
+                    mins_text2.innerText = (String(min2).padStart(2, '0'));
+                    if (arrow_downM2.classList == "px-1 fs-4 bi bi-caret-down") {
+                        arrow_downM2.classList.add('bi-caret-down-fill');
+                        arrow_downM2.classList.remove('bi-caret-down');
+                    }
+                    if (min2 == 0) {
+                        arrow_upM2.classList.add('bi-caret-up');
+                        arrow_upM2.classList.remove('bi-caret-up-fill');
+                    }
+                }
+            }
+        }
+
+        function downM(par) {
+            if (par == 1) {
+                if (min != 45) {
+                    min += 15;
+                    mins_text.innerText = (String(min).padStart(2, '0'));
+                    if (arrow_upM.classList == "px-1 fs-4 bi bi-caret-up") {
+                        arrow_upM.classList.add('bi-caret-up-fill');
+                        arrow_upM.classList.remove('bi-caret-up');
+                    }
+                    if (min == 45) {
+                        arrow_downM.classList.add('bi-caret-down');
+                        arrow_downM.classList.remove('bi-caret-down-fill');
+
+                    }
+                }
+            }
+            else if (par == 2) {
+                if (min2 != 45) {
+                    min2 += 15;
+                    mins_text2.innerText = (String(min2).padStart(2, '0'));
+                    if (arrow_upM2.classList == "px-1 fs-4 bi bi-caret-up") {
+                        arrow_upM2.classList.add('bi-caret-up-fill');
+                        arrow_upM2.classList.remove('bi-caret-up');
+                    }
+                    if (min2 == 45) {
+                        arrow_downM2.classList.add('bi-caret-down');
+                        arrow_downM2.classList.remove('bi-caret-down-fill');
+
+                    }
+                }
+            }
+        }
+
+        //APPLYING FILTERS
+        function applyingFilters() {
+            let result;
+
+            let fromTime = Number(hour) * 60 + Number(min);
+            let toTime = Number(hour2) * 60 + Number(min2);
+
+            const now = new Date();
+            const nowTime = now.getHours() * 60 + now.getMinutes();
+
+            if (todaybool == true) {
+                result = todayDate;
+                if (toTime < nowTime) {
+                    alert("The end time has already passed. (it ends it)");
+                    return "ERROR";
+                }
+                else if (fromTime > nowTime) { //THIS SHOULD BE TESTED ON FRIDAY
+                    alert("The start time has already passed. (but it proceeds/accepts it)");
+                }
+            }
+            else { result = tomorrowDate; }
+
+            if (((toTime - fromTime) < 5)) {
+                if ((toTime - fromTime) >= 0) {
+                    alert("Less than 5-minute stay.");
+                }
+                else {
+                    alert("Invalid time interval.");
+                }
+                return "ERROR";
+            }
+            else if ((toTime - fromTime) > 8 * 60) {
+                alert("Over 8-hour stay.");
+                return "ERROR";
+            }
+
+            result += ", from:" + (String(hour).padStart(2, '0')) + ":" + (String(min).padStart(2, '0')) + " to:" + (String(hour2).padStart(2, '0')) + ":" + (String(min2).padStart(2, '0'));
+            alert(result);
+            document.getElementById('close-filter').click();
+        }
+
+        //RESTARTING FILTERS
+        function restartFilter() {
+            hour = 7;
+            hour2 = 7;
+            min = 0;
+            min2 = 0;
+
+            hour_text.innerText = (String(hour).padStart(2, '0'));
+            arrow_upH.classList.add('bi-caret-up');
+            arrow_upH.classList.remove('bi-caret-up-fill');
+
+            hour_text2.innerText = (String(hour2).padStart(2, '0'));
+            arrow_upH2.classList.add('bi-caret-up');
+            arrow_upH2.classList.remove('bi-caret-up-fill');
+
+            mins_text.innerText = (String(min).padStart(2, '0'));
+            arrow_upM.classList.add('bi-caret-up');
+            arrow_upM.classList.remove('bi-caret-up-fill');
+
+            mins_text2.innerText = (String(min2).padStart(2, '0'));
+            arrow_upM2.classList.add('bi-caret-up');
+            arrow_upM2.classList.remove('bi-caret-up-fill');
+
+            setToday();
+        }
+
+
+    </script>
+
+</body>
+
+</html>

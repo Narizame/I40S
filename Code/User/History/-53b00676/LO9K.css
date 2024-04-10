@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* background-color: #111642; */
+    
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  
+}
+
+#particle-canvas {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+body,
+input {
+    font-family: "Poppins", sans-serif;
+}
+
+.signin-signup {
+    background-color: #E6E8E9;
+    border-radius: 5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50%;
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 5;
+}
+.signin-signup1 {
+    background-color: #E6E8E9;
+    border-radius: 5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 5;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0rem 5rem;
+    transition: all 0.2s 0.7s;
+    overflow: hidden;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    z-index: 2;
+}
+
+.title {
+    font-size: 2.2rem;
+    color: #111642;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+.input-field {
+    max-width: 380px;
+    width: 100%;
+    background-color: #f0f0f0;
+    border: 1px solid #111642;
+    margin: 10px 0;
+    height: 55px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+}
+
+.input-field i {
+    
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+}
+
+.input-field input {
+    
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+}
+.btn {
+    width: 150px;
+    background-color: #111642;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #BFDFE9;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  .btn:hover {
+    background-color: #2a3281;
+    color: #87b5c2;
+  }

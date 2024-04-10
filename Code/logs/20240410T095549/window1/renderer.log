@@ -1,0 +1,5 @@
+2024-04-10 09:55:49.949 [info] Initial editor state {"filesToOpenOrCreate":[{"fileUri":{"$mid":1,"path":"/home/I40S/.config/rofi/config","scheme":"file"},"type":1,"exists":false}],"filesToDiff":[],"filesToMerge":[]}
+2024-04-10 09:55:50.262 [info] Started local extension host with pid 11880.
+2024-04-10 09:55:51.144 [error] [Extension Host] (node:11880) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `exe --trace-deprecation ...` to show where the warning was created)
+2024-04-10 09:55:52.874 [info] [perf] Render performance baseline is 21ms

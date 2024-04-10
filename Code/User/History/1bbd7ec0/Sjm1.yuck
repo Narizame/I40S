@@ -1,0 +1,10 @@
+(defwidget clock []
+    (defpoll hour	:interval "1s"	"date '+%H'")
+    (defpoll min	:interval "1s"	"date '+%M'")
+)
+
+(defwidget big_clock []
+    (box :class "big_clock_box" :orientation "h" :space-evenly false
+        (label :class "big_clock_label" :text {formattime(EWW_TIME, "%H:%M")})
+    )
+)

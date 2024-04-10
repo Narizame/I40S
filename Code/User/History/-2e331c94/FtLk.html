@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./login_signin.css">
+    <title>Log In</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #202020;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #particle-canvas {
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        body,
+        input {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .signin-signup {
+            background-color: #EDEDEB;
+            border-radius: 5%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         
+        }
+
+        form {
+            width: 100%;
+            max-width: 400px;
+            padding: 0rem 2rem;
+            
+        }
+
+        .title {
+            font-size: 2.2rem;
+            color: #111642;
+            margin-bottom: 10px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .input-field {
+            width: 100%;
+            background-color: #f0f0f0;
+            border: 1px solid #111642;
+            margin: 10px 0;
+            height: 55px;
+            border-radius: 55px;
+            display: grid;
+            grid-template-columns: 15% 85%;
+            padding: 0 0.4rem;
+            position: relative;
+        }
+
+        .input-field i {
+            text-align: center;
+            line-height: 55px;
+            color: #acacac;
+            transition: 0.5s;
+            font-size: 1.1rem;
+        }
+
+        .input-field input {
+            background: none;
+            outline: none;
+            border: none;
+            line-height: 1;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .input-field input::placeholder {
+            color: #aaa;
+            font-weight: 500;
+        }
+
+        .btn {
+            width: 100%;
+            background-color: #202020;
+            border: none;
+            outline: none;
+            height: 49px;
+            border-radius: 49px;
+            color: #D6CC56;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .btn:hover {
+            background-color: #E1B02E;
+            color: #2d2101;
+        }
+    </style>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #202020;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #particle-canvas {
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        body,
+        input {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .signin-signup {
+            background-color: #EDEDEB;
+            border-radius: 5%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         
+        }
+
+        form {
+            width: 100%;
+            max-width: 400px;
+            padding: 0rem 2rem;
+            
+        }
+
+        .title {
+            font-size: 2.2rem;
+            color: #111642;
+            margin-bottom: 10px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .input-field {
+            width: 100%;
+            background-color: #f0f0f0;
+            border: 1px solid #111642;
+            margin: 10px 0;
+            height: 55px;
+            border-radius: 55px;
+            display: grid;
+            grid-template-columns: 15% 85%;
+            padding: 0 0.4rem;
+            position: relative;
+        }
+
+        .input-field i {
+            text-align: center;
+            line-height: 55px;
+            color: #acacac;
+            transition: 0.5s;
+            font-size: 1.1rem;
+        }
+
+        .input-field input {
+            background: none;
+            outline: none;
+            border: none;
+            line-height: 1;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .input-field input::placeholder {
+            color: #aaa;
+            font-weight: 500;
+        }
+
+        .btn {
+            width: 100%;
+            background-color: #202020;
+            border: none;
+            outline: none;
+            height: 49px;
+            border-radius: 49px;
+            color: #D6CC56;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .btn:hover {
+            background-color: #E1B02E;
+            color: #2d2101;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particle-canvas"> </div>
+    <div class="signin-signup">
+        <form action="" class="sign-in-form">
+            <h2 class="title">Log In</h2>
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="Login" class="btn solid" />
+        </form>
+    </div>
+
+    <script src="../js_animation_canvas/particle.js"></script>
+</body>
+
+</html>

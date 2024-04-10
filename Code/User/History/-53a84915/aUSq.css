@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111642;
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+#particle-canvas {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.modal {
+    background-color: #E6E8E9;
+    border-radius: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 5;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0rem 5rem;
+    transition: all 0.2s 0.7s;
+    overflow: hidden;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    z-index: 2;
+}
+
+.center-left-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+}
+
+.center-right-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+}
+
+.arrow {
+    color: #E6E8E9;
+    width: 80%;
+    height: 80%;
+}
+
+.arrow1 {
+    color: #E6E8E9;
+    width: 80%;
+    height: 80%;
+    transform: rotate(180deg);
+}
+
+#svg80 {
+    width: 100%;
+}
+
+.sectionA {
+    position: relative;
+}
+
+
+/* Стилове за таблицата */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #E1B02E;
+}
+
+/* Стилове за бутоните */
+
+.close-button {
+    /* float: right;
+    display: none; */
+    /* По подразбиране скрит */
+    /* color: #6c5d5d; */
+    font-size: 3vw;
+    left: 0;
+    /* font-weight:vw 600; */
+    display: inline-block;
+    /* transform: rotate(45deg); */
+}
+
+.table_closeBtn_bookBtn {
+
+    /* transform: translateX(-50%); */
+
+    width: 40vw;
+
+    display: grid;
+    grid:
+        "table closeBtn" 1fr "bookBtn ." 10% / 1fr 10%;
+    gap: 8px;
+
+}
+
+.table {
+    grid-area: table;
+}
+
+.closeBtn {
+    grid-area: closeBtn;
+    padding-left: 1vw;
+}
+
+.bookBtn {
+    grid-area: bookBtn;
+    text-align: right;
+}
+
+.bookButton {
+    /* background-color: rgb(255, 0, 0); */
+    color: #000000;
+    background-color: #bcae59;
+    padding: 1vw;
+    font-size: larger;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.bookButton:hover{
+    background-color: #92873f;
+}
+
+
+
+
+#container {
+    display: none;
+    position: absolute;
+    width: 100%;
+    /* background-color: aqua; */
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    /* display:  */
+    /* padding: 10px;
+    margin: 10px; */
+
+    cursor: pointer;
+}
+
+.hiddenDiv {
+    background-color: rgb(222, 219, 175);
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vw;
+    border: 2px solid #000000;
+}
+
+#svg80{
+    overflow: auto;
+}

@@ -1,0 +1,27 @@
+.workspaces {
+    border-radius: 1rem;
+    padding: 5 0.5rem;
+    margin: 1 0.6rem;
+    background-color: $surfaceVariant;
+}
+
+.workspace {
+    border-radius: 1rem;
+    background-color: $onPrimary;
+    margin: 2 0.25rem;
+    padding: 0 0.6rem;
+    transition: 0.6s;
+
+    &.current {
+        background-color: $primary;
+        padding: 20 0.8rem;
+        margin: 8 0rem;
+    }
+}
+
+.workspace:hover {
+    background-color: mix($onPrimary, $onSurface, 70%);
+    &.current {
+        background-color: mix($primary, $onSurface, 70%);
+    }
+}

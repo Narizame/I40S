@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./parking_zones.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap">
+
+    <!--IZPOLZVA jQuery, NO ZA DA NE SE TEGLI, SE IZPOLZVA TOZI LINK-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Sector A</title>
+
+    <style>
+        .rocker {
+            font-size: 200%;
+            color: #c4c4c4;
+            width: 7em;
+            height: 4em;
+            border-bottom: 0.5em solid #2f2f2f;
+        }
+
+        .rocker::before {
+            content: "";
+            position: absolute;
+            top: 0.5em;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #4b4b4b;
+            border: 0.5em solid #2f2f2f;
+            border-bottom: 0;
+        }
+
+        .rocker input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .switch-left,
+        .switch-right {
+            cursor: pointer;
+            height: 2.5em;
+            width: 3em;
+            transition: 0.2s;
+        }
+
+        .switch-left {
+            height: 2.4em;
+            width: 2.75em;
+            left: 0.85em;
+            bottom: 0.4em;
+            background-color: #6a6a6a;
+            transform: rotate(15deg) skewX(15deg);
+        }
+
+        .switch-right {
+            right: 0.5em;
+            bottom: 0;
+            background-color: #E1B02E;
+            color: #fff;
+        }
+
+        .switch-left::before,
+        .switch-right::before {
+            content: "";
+            position: absolute;
+            width: 0.4em;
+            height: 2.45em;
+            bottom: -0.45em;
+            background-color: #7d7d7d;
+            transform: skewY(-65deg);
+        }
+
+        .switch-left::before {
+            left: -0.4em;
+        }
+
+        .switch-right::before {
+            right: -0.375em;
+            background-color: transparent;
+            transform: skewY(65deg);
+        }
+
+        input:checked+.switch-left {
+            background-color: #E1B02E;
+            color: #fff;
+            bottom: 0px;
+            left: 0.5em;
+            height: 2.5em;
+            width: 3em;
+            transform: rotate(0deg) skewX(0deg);
+        }
+
+        input:checked+.switch-left::before {
+            background-color: transparent;
+            width: 3.0833em;
+        }
+
+        input:checked+.switch-left+.switch-right {
+            background-color: #6a6a6a;
+            color: #c4c4c4;
+            bottom: 0.4em;
+            right: 0.8em;
+            height: 2.4em;
+            width: 2.75em;
+            transform: rotate(-15deg) skewX(-15deg);
+        }
+
+        input:checked+.switch-left+.switch-right::before {
+            background-color: #7d7d7d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="particle-canvas"></div>
+    <div class="d-flex flex-column position-absolute top-0 start-0 w-100 h-100">
+        <!--HEADER-->
+        <header
+            class="col-12 position-relative w-100 top-0 m-0 start-0 d-flex justify-content-between overflow-hidden border border-warning border-top-0 border-end-0 border-start-0"
+            id="top-navigation" style="background-color: #202020;">
+            <!--LQVA CHAST HEADER-->
+            <div class="d-flex align-content-middle my-auto ms-3" style="cursor: pointer;">
+                <p class="h-100 fs-1 p-0 my-auto" style="color: #E1B02E;"><i
+                        class="bi bi-car-front-fill fs-1 mx-2"></i>CarTrek
+                </p>
+            </div>
+
+            <!--DQSNA CHAST HEADER-->
+            <div class="pe-md-2 m-3 d-md-flex d-none align-items-center">
+                <button class="btn mx-2 btn-lg fw-medium" type="button" id="filter-btn"
+                    style="border: 2px solid #E1B02E; color: #E1B02E;"
+                    onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                    onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';"
+                    data-bs-toggle="modal" data-bs-target="#date-filter" onclick="load();">Dates
+                    <i class="bi bi-calendar-check-fill ps-1"></i>
+                </button>
+
+                <button class="btn mx-2 btn-lg bi bi-person-circle" style="border: 2px solid #E1B02E; color: #E1B02E;"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                    aria-controls="offcanvasWithBothOptions"
+                    onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                    onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';">
+                </button>
+            </div>
+
+            <div class="pe-md-5 m-3 d-flex d-md-none align-items-center">
+                <button class="btn mx-2 btn-lg bi bi-list-ul" style="border: 2px solid #E1B02E; color: #E1B02E;"
+                    onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                    onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';"
+                    type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"></button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel" style="background-color: #202020;">
+                    <div class="offcanvas-header">
+                        <h3 class="offcanvas-title" id="offcanvasRightLabel">
+                            <p class="h-100 fs-1 p-0 my-auto" style="color: #E1B02E;"><i
+                                    class="bi bi-car-front-fill fs-1 mx-2"></i>CarTrek
+                            </p>
+                        </h3>
+                        <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                            <i class="bi bi-x fs-1" style="color: #E1B02E;"></i>
+                        </button>
+                    </div>
+                    <div class="offcanvas-body d-flex flex-column">
+                        <button class="btn m-2 btn-lg fw-medium" type="button" id="filter-btn-side"
+                            style="border: 2px solid #E1B02E; color: #E1B02E;"
+                            onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                            onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';"
+                            data-bs-toggle="modal" data-bs-target="#date-filter" onclick="load();">Dates
+                            <i class="bi bi-calendar-check-fill ps-1"></i>
+                        </button>
+
+                        <button class="btn m-2 btn-lg bi bi-person-circle"
+                            style="border: 2px solid #E1B02E; color: #E1B02E;" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"
+                            onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                            onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--ACCOUNTS-->
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel" style="background-color: #202020;">
+                <div class="offcanvas-header w-100 d-flex" style="height: 100px; border-bottom: 2px solid #E1B02E;">
+                    <!--DALI E DOSTATYCHNO INTUITIVNO BEZ X BUTON-->
+
+                    <div class="d-flex align-middle justify-content-between">
+                        <div class="d-block">
+                            <p class="my-1" style="color: #E1B02E;">Име Фамилия</p>
+                            <p class="my-1" style="color: #E1B02E;">e-mail</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn d-block d-md-none" data-bs-dismiss="offcanvas" aria-label="Close">
+                        <i class="bi bi-x fs-1" style="color: #E1B02E;"></i>
+                    </button>
+                </div>
+                <div class="offcanvas-body d-flex flex-column">
+                    <button class="btn m-2 btn-lg" style="border: 2px solid #E1B02E; color: #E1B02E;"
+                        data-bs-toggle="modal" data-bs-target="#history_modal" onclick="loadHistoryModal();"
+                        onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                        onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';">
+                        History
+                    </button>
+                    <button class="btn m-2 btn-lg" style="border: 2px solid #E1B02E; color: #E1B02E;"
+                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                        aria-controls="offcanvasWithBothOptions"
+                        onmouseover="this.style.backgroundColor = '#E1B02E'; this.style.color = '#202020'; this.style.border = '2px solid #E1B02E';"
+                        onmouseleave="this.style.backgroundColor = ''; this.style.color = '#E1B02E'; this.style.border = '2px solid #E1B02E';">
+                        Log out <i class="bi bi-person-circle ps-1"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="d-flex flex-row w-100 h-100 justify-content-center">
+            <div class="text-light col-3 d-flex flex-column justify-content-start align-items-center"
+                style="border-right: 3px solid #E1B02E;">
+                <div class="widget d-lg-flex d-none position-relative h-75">
+                    <canvas
+                        class="d-flex flex-column align-content-middle align-items-middle align-self-middle align-middle m-auto">
+                        <script>
+
+                            //CALCULATING
+                            const allParkingSpots = 18; //doesn't need to be gotten from the DB
+                            var avail_text = document.getElementById('avail-text');
+
+                            function loadAvailability() {
+                                let bookedSpots = ["A1", "A2", "A5", "A10", "B4", "B5", "B7", "B8"]; //this we get from DB
+                                let availSpots = Number(allParkingSpots - bookedSpots.length); //this we calculate
+                                availSpots /= allParkingSpots;
+                                availSpots *= 100;
+                                return (availSpots / 100).toFixed(2);
+                            }
+
+                            //CANVA
+                            window.requestAnimFrame = (function () {
+                                return window.requestAnimationFrame ||
+                                    window.webkitRequestAnimationFrame ||
+                                    window.mozRequestAnimationFrame ||
+                                    function (callback) {
+                                        window.setTimeout(callback, 1000 / 60);
+                                    };
+                            })();
+
+                            var canva = $('canvas')[0];
+                            var cxt = canva.getContext('2d');
+                            var width = $('canvas').width();
+                            var height = $('canvas').height();
+                            canva.width = width;
+                            canva.height = height;
+                            var center = { x: width / 2, y: height / 2 };
+                            var value = loadAvailability();
+                            var initialValue = 0;
+
+                            var rotation = Math.random() * Math.PI * 2;
+
+                            var draw = function () {
+                                rotation += .001;
+
+                                if (rotation >= Math.PI * 2)
+                                    rotation -= Math.PI * 2;
+
+                                if (Math.abs(initialValue - value) < .001)
+                                    initialValue = value;
+
+                                if (initialValue != value) {
+                                    initialValue += (value - initialValue) / 50;
+                                    $('.widget h2').html(Math.round(initialValue * 100) + '%');
+                                }
+
+                                cxt.clearRect(0, 0, width, height);
+                                cxt.save();
+
+                                cxt.translate(center.x, center.y);
+                                cxt.rotate(rotation)
+
+                                cxt.lineWidth = 35;
+                                cxt.beginPath();
+                                cxt.arc(0, 0, 100, 0, Math.PI * 2, false);
+                                var grad = cxt.createLinearGradient(0, 0, 0, height);
+                                grad.addColorStop(0, '#E1B02E');
+                                grad.addColorStop(1, '#E1B02E');
+                                cxt.strokeStyle = grad;
+                                cxt.shadowBlur = 10;
+                                cxt.shadowColor = "rgba(0,0,0,.5)";
+                                cxt.shadowOffsetX = 0;
+                                cxt.shadowOffsetY = 4;
+                                cxt.stroke();
+
+                                cxt.beginPath();
+                                cxt.arc(0, 0, 120, rotation, Math.PI * 2 * initialValue + rotation, false);
+                                grad = cxt.createLinearGradient(0, 0, 0, height);
+                                grad.addColorStop(0, '#EDEDEB');
+                                grad.addColorStop(1, '#EDEDEB');
+                                cxt.strokeStyle = grad;
+                                // cxt.shadowBlur = 10;
+                                cxt.shadowColor = "rgba(0,0,0,.5)";
+                                cxt.shadowOffsetX = 0;
+                                cxt.shadowOffsetY = 4;
+                                cxt.stroke();
+
+                                cxt.restore();
+                                requestAnimFrame(draw);
+                            }
+                            draw();
+                        </script>
+                    </canvas>
+                    <div class="capacity-label">
+                        <h2 id="avail-text"></h2>
+                        <p class="fs-5">Capacity</p>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column justify-content-center">
+                    <div class="mx-auto">
+                        <div class="d-flex align-items-center justify-content-center pt-1"
+                            style="box-sizing: border-box;">
+                            <label class="rocker d-inline-block position-relative fw-bold overflow-hidden text-center">
+                                <input type="checkbox" checked>
+                                <span
+                                    class="switch-left d-flex position-absolute align-items-center justify-content-center">A</span>
+                                <span
+                                    class="switch-right d-flex position-absolute align-items-center justify-content-center">B</span>
+                            </label>
+                        </div>
+                        <label class="justify-content-center text-center w-100 fs-4">Choose Sector</label>
+                    </div>
+
+
+                    <div class="mx-auto mt-5">
+                        <button type="button" class="btn btn-outline-warning btn-lg" data-toggle="modal"
+                            data-target="#map_modal">
+                            Map <i class="bi bi-map"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="map_modal" tabindex="-1" role="dialog" aria-labelledby="map_modal_title"
+                aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen-md-down mt-md-5 modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #E1B02E;">
+                            <h1 class="modal-title fs-5 text-center" id="exampleModalLabel" style="color: #202020;">
+                                History
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body h-100 p-0">
+                            <div class="accordion accordion-flush" id="accordionFlushExample"
+                                style="border-top: 1px solid #202020;">
+                                <!--Active Bookings-->
+                                <div class="accordion-item" style=" border-bottom: 1px solid #202020;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseOne" aria-expanded="true"
+                                            aria-controls="flush-collapseOne"
+                                            style="color: #202020; background-color: #E1B02E;">
+                                            Active bookings
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse show mb-0"
+                                        data-bs-parent="#accordionFlushExample"
+                                        style="max-height: 50vh; overflow-y: auto;">
+                                        <div class="accordion-body">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="col-1">#</th>
+                                                        <th class="col-3">Place</th>
+                                                        <th class="col-4">From</th>
+                                                        <th class="col-4">To</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="active-table-body">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Inactive Bookings-->
+                                <div class="accordion-item" style=" border-bottom: 1px solid #202020;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                            aria-expanded="false" aria-controls="flush-collapseTwo"
+                                            style="color: #202020; background-color: #E1B02E;">
+                                            Inactive bookings
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionFlushExample"
+                                        style="max-height: 50vh; overflow-y: auto;">
+                                        <div class="accordion-body">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="col-1">#</th>
+                                                        <th class="col-3">Place</th>
+                                                        <th class="col-4">From</th>
+                                                        <th class="col-4">To</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="inactive-table-body">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-light col-9 d-flex align-content-middle h-100 justify-content-around"
+                style="border: 3px transparent;">
+                <div class="col-3 d-flex justify-content-center h-25 pt-5 my-auto">
+                    <button class="btn btn-outline-warning btn-lg"><i class="bi bi-arrow-left"></i></button>
+                </div>
+                <div class="d-flex justify-content-center h-100 my-auto w-100 row">
+                    <div class="w-100 mt-4 d-flex justify-content-center"
+                        style=" height: 5%; font-family: 'Poppins', sans-serif;">Current parking spot</div>
+                    <div class="h-75 w-100 my-2"
+                        style="background-color: white; border: 4px solid #E1B02E; border-radius: 5px;"></div>
+                    <button class="mb-4 btn btn-outline-warning"
+                        style="font-family: 'Poppins', sans-serif;">Book</button>
+                </div>
+                <div class="col-3 d-flex justify-content-center h-25 pt-5 my-auto">
+                    <button class="btn btn-outline-warning btn-lg"><i class="bi bi-arrow-right"></i></button>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!--Date Modal-->
+    <div class="modal fade" id="date-filter" tabindex="-1" aria-labelledby="date-filterLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-lg-down">
+            <div class="modal-content d-block">
+                <div class="modal-header" style="background-color: #202020;">
+                    <h1 class="modal-title fs-3 ms-3" id="date-filterLabel" style="color: #E1B02E;">Filters</h1>
+                    <button type="button" class="btn p-0" data-bs-dismiss="modal" aria-label="Close"
+                        id="close-filter"><i class="bi bi-x fs-1" style="color: #E1B02E;"></i></button>
+                </div>
+                <div class="modal-body d-flex" style="background-color: #EDEDEB;">
+                    <!--Calendar-->
+                    <div class="col-6 col-md-7 me-md-5 me-1">
+                        <p class="fs-1" style="color: 000000;">Date:</p>
+                        <div class="justify-content-center">
+                            <!--Today-->
+                            <div class="d-flex justify-content-between" id="today" onclick="setToday();">
+                                <div class="col-3 justify-content-center text-center py-3 fw-bold"
+                                    style="background-color: #E1B02E;" id="todays-date"></div>
+                                <div class="col-3 justify-content-center text-center py-3 fw-bold"
+                                    style="background-color: #C49F39;" id="todays-month"></div>
+                                <div class="col-6 justify-content-center text-center py-3 fw-bold"
+                                    style="background-color: #AF9341;" id="todays-year"></div>
+                            </div>
+                            <!--Tomorrow-->
+                            <div class="d-flex justify-content-between opacity-50" id="tomorrow"
+                                onclick="setTomorrow();">
+                                <div class="col-3 justify-content-center text-center py-3 fw-bold"
+                                    style="background-color: #E6BD4C;" id="tomorrows-date"></div>
+                                <div class="col-3 justify-content-center text-center py-3 fw-bold"
+                                    style="background-color: #C49F39;" id="tomorrows-month"></div>
+                                <div class="col-6 justify-content-center text-center py-3 fw-bold"
+                                    style="background-color: #AF9341;" id="tomorrows-year"></div>
+                            </div>
+                            <!--Buttons-->
+                            <div class="my-2 mt-3 w-100 d-flex justify-content-center">
+                                <button type="button" class="btn me-1" id="btn-today"
+                                    style="background-color: #202020; border-color: #202020; color: #E6BD4C;"
+                                    onclick="setToday();">Today</button>
+                                <button type="button" class="btn ms-1" id="btn-tomorrow"
+                                    style="background-color: #E6BD4C; border-color: #202020; color: #000000;"
+                                    onclick="setTomorrow();">Tomorrow</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Hours-->
+                    <div class="col-5 ms-2 d-flex flex-column justify-content-center">
+                        <p class="fs-1 mb-0">Set Time:</p>
+                        <div class="d-flex flex-column flex-lg-row justify-content-center">
+                            <p class="fs-4 mb-0 col-2">From:</p>
+                            <!--par == 1, a.k.a. From:-->
+                            <div class="d-flex w-100 justify-content-center">
+                                <div class="d-flex flex-column justify-content-center mx-1">
+                                    <div onclick="upH(1);"><i class="px-1 fs-4 bi bi-caret-up" id="arrow-upH"
+                                            style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i></div>
+                                    <p class="fs-5 px-1 border my-0" id="hour-text" type="number">07</p>
+                                    <div onclick="downH(1);"><i class="px-1 fs-4 bi bi-caret-down-fill" id="arrow-downH"
+                                            style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-content-middle my-auto">
+                                    <p class="fs-5 border px-2 my-0">:</p>
+                                </div>
+                                <div class="d-flex flex-column mx-1">
+                                    <div onclick="upM(1);"><i class="px-1 fs-4 bi bi-caret-up" id="arrow-upM"
+                                            style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i></div>
+                                    <p class="fs-5 px-1 border my-0" id="mins-text">
+                                        00</p>
+                                    <div onclick="downM(1);"><i class="px-1 fs-4 bi bi-caret-down-fill" id="arrow-downM"
+                                            style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-1 d-flex flex-column flex-lg-row justify-content-center">
+                            <p class="fs-4 mb-0 col-2">To:</p>
+                            <!--par == 2, a.k.a. To:-->
+                            <div class="d-flex w-100 justify-content-center">
+                                <div class="d-flex flex-column justify-content-center mx-1">
+                                    <div onclick="upH(2);"><i class="px-1 fs-4 bi bi-caret-up" id="arrow-upH2"
+                                            style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i>
+                                    </div>
+                                    <p class="fs-5 px-1 border my-0" id="hour-text2" type="number">07
+                                    </p>
+                                    <div onclick="downH(2);"><i class="px-1 fs-4 bi bi-caret-down-fill"
+                                            id="arrow-downH2" style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i></div>
+                                </div>
+                                <div class="d-flex align-content-middle my-auto">
+                                    <p class="fs-5 border px-2 my-0">:</p>
+                                </div>
+                                <div class="d-flex flex-column mx-1">
+                                    <div onclick="upM(2);"><i class="px-1 fs-4 bi bi-caret-up" id="arrow-upM2"
+                                            style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i>
+                                    </div>
+                                    <p class="fs-5 px-1 border my-0" id="mins-text2">
+                                        00</p>
+                                    <div onclick="downM(2);"><i class="px-1 fs-4 bi bi-caret-down-fill"
+                                            id="arrow-downM2" style="cursor: pointer; color: #202020;"
+                                            onmouseover="this.style.color = '#E1B02E';"
+                                            onmouseleave="this.style.color = '#202020';"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="background-color: #202020;">
+                    <button type="button" class="btn" onclick="applyingFilters();"
+                        style="background-color: #E6BD4C; border-color: #000000; color: #000000;">Apply
+                        filters</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--History Modal-->
+    <div class="modal fade" id="history_modal" tabindex="-1" role="dialog" aria-labelledby="history_modal_title"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-md-down mt-md-5 modal-xl">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #E1B02E;">
+                    <h1 class="modal-title fs-5 text-center" id="exampleModalLabel" style="color: #202020;">History
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body h-100 p-0">
+                    <div class="accordion accordion-flush" id="accordionFlushExample"
+                        style="border-top: 1px solid #202020;">
+                        <!--Active Bookings-->
+                        <div class="accordion-item" style=" border-bottom: 1px solid #202020;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="true"
+                                    aria-controls="flush-collapseOne"
+                                    style="color: #202020; background-color: #E1B02E;">
+                                    Active bookings
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse show mb-0"
+                                data-bs-parent="#accordionFlushExample" style="max-height: 50vh; overflow-y: auto;">
+                                <div class="accordion-body">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-1">#</th>
+                                                <th class="col-3">Place</th>
+                                                <th class="col-4">From</th>
+                                                <th class="col-4">To</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="active-table-body">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Inactive Bookings-->
+                        <div class="accordion-item" style=" border-bottom: 1px solid #202020;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                    aria-controls="flush-collapseTwo"
+                                    style="color: #202020; background-color: #E1B02E;">
+                                    Inactive bookings
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample" style="max-height: 50vh; overflow-y: auto;">
+                                <div class="accordion-body">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-1">#</th>
+                                                <th class="col-3">Place</th>
+                                                <th class="col-4">From</th>
+                                                <th class="col-4">To</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="inactive-table-body">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        !function (a) { var b = "object" == typeof self && self.self === self && self || "object" == typeof global && global.global === global && global; "function" == typeof define && define.amd ? define(["exports"], function (c) { b.ParticleNetwork = a(b, c) }) : "object" == typeof module && module.exports ? module.exports = a(b, {}) : b.ParticleNetwork = a(b, {}) }(function (a, b) { var c = function (a) { this.canvas = a.canvas, this.g = a.g, this.particleColor = a.options.particleColor, this.x = Math.random() * this.canvas.width, this.y = Math.random() * this.canvas.height, this.velocity = { x: (Math.random() - .5) * a.options.velocity, y: (Math.random() - .5) * a.options.velocity } }; return c.prototype.update = function () { (this.x > this.canvas.width + 20 || this.x < -20) && (this.velocity.x = -this.velocity.x), (this.y > this.canvas.height + 20 || this.y < -20) && (this.velocity.y = -this.velocity.y), this.x += this.velocity.x, this.y += this.velocity.y }, c.prototype.h = function () { this.g.beginPath(), this.g.fillStyle = this.particleColor, this.g.globalAlpha = .7, this.g.arc(this.x, this.y, 1.5, 0, 2 * Math.PI), this.g.fill() }, b = function (a, b) { this.i = a, this.i.size = { width: this.i.offsetWidth, height: this.i.offsetHeight }, b = void 0 !== b ? b : {}, this.options = { particleColor: void 0 !== b.particleColor ? b.particleColor : "#fff", background: void 0 !== b.background ? b.background : "#1a252f", interactive: void 0 !== b.interactive ? b.interactive : !0, velocity: this.setVelocity(b.speed), density: this.j(b.density) }, this.init() }, b.prototype.init = function () { if (this.k = document.createElement("div"), this.i.appendChild(this.k), this.l(this.k, { position: "absolute", top: 0, left: 0, bottom: 0, right: 0, "z-index": 1 }), /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(this.options.background)) this.l(this.k, { background: this.options.background }); else { if (!/\.(gif|jpg|jpeg|tiff|png)$/i.test(this.options.background)) return console.error("Please specify a valid background image or hexadecimal color"), !1; this.l(this.k, { background: 'url("' + this.options.background + '") no-repeat center', "background-size": "cover" }) } if (!/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(this.options.particleColor)) return console.error("Please specify a valid particleColor hexadecimal color"), !1; this.canvas = document.createElement("canvas"), this.i.appendChild(this.canvas), this.g = this.canvas.getContext("2d"), this.canvas.width = this.i.size.width, this.canvas.height = this.i.size.height, this.l(this.i, { position: "relative" }), this.l(this.canvas, { "z-index": "20", position: "relative" }), window.addEventListener("resize", function () { return this.i.offsetWidth === this.i.size.width && this.i.offsetHeight === this.i.size.height ? !1 : (this.canvas.width = this.i.size.width = this.i.offsetWidth, this.canvas.height = this.i.size.height = this.i.offsetHeight, clearTimeout(this.m), void (this.m = setTimeout(function () { this.o = []; for (var a = 0; a < this.canvas.width * this.canvas.height / this.options.density; a++)this.o.push(new c(this)); this.options.interactive && this.o.push(this.p), requestAnimationFrame(this.update.bind(this)) }.bind(this), 500))) }.bind(this)), this.o = []; for (var a = 0; a < this.canvas.width * this.canvas.height / this.options.density; a++)this.o.push(new c(this)); this.options.interactive && (this.p = new c(this), this.p.velocity = { x: 0, y: 0 }, this.o.push(this.p), this.canvas.addEventListener("mousemove", function (a) { this.p.x = a.clientX - this.canvas.offsetLeft, this.p.y = a.clientY - this.canvas.offsetTop }.bind(this)), this.canvas.addEventListener("mouseup", function (a) { this.p.velocity = { x: (Math.random() - .5) * this.options.velocity, y: (Math.random() - .5) * this.options.velocity }, this.p = new c(this), this.p.velocity = { x: 0, y: 0 }, this.o.push(this.p) }.bind(this))), requestAnimationFrame(this.update.bind(this)) }, b.prototype.update = function () { this.g.clearRect(0, 0, this.canvas.width, this.canvas.height), this.g.globalAlpha = 1; for (var a = 0; a < this.o.length; a++) { this.o[a].update(), this.o[a].h(); for (var b = this.o.length - 1; b > a; b--) { var c = Math.sqrt(Math.pow(this.o[a].x - this.o[b].x, 2) + Math.pow(this.o[a].y - this.o[b].y, 2)); c > 120 || (this.g.beginPath(), this.g.strokeStyle = this.options.particleColor, this.g.globalAlpha = (120 - c) / 120, this.g.lineWidth = .7, this.g.moveTo(this.o[a].x, this.o[a].y), this.g.lineTo(this.o[b].x, this.o[b].y), this.g.stroke()) } } 0 !== this.options.velocity && requestAnimationFrame(this.update.bind(this)) }, b.prototype.setVelocity = function (a) { return "fast" === a ? 1 : "slow" === a ? .33 : "none" === a ? 0 : .66 }, b.prototype.j = function (a) { return "high" === a ? 5e3 : "low" === a ? 2e4 : isNaN(parseInt(a, 10)) ? 1e4 : a }, b.prototype.l = function (a, b) { for (var c in b) a.style[c] = b[c] }, b });
+
+        var canvasDiv = document.getElementById('particle-canvas');
+        var options = {
+            particleColor: '#E1B02E',
+            background: '#202020',
+            interactive: true,
+            speed: 'low',
+            density: 'medium'
+        };
+        var particleCanvas = new ParticleNetwork(canvasDiv, options);
+    </script>
+
+    <script id="date-and-time-script">
+        function load() {
+            setDate();
+            setToday();
+            restartFilter();
+        }
+
+        //DATE
+        var btn_today = document.getElementById('btn-today');
+        var btn_tomorrow = document.getElementById('btn-tomorrow');
+        var today = document.getElementById('today');
+        var tomorrow = document.getElementById('tomorrow');
+
+        var todayDate;
+        var tomorrowDate;
+        var todaybool = true;
+
+        /*Get Date*/
+        function setDate() {
+            document.getElementById('filter-btn').click();
+            const date = new Date();
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            todayDate = (String(day).padStart(2, '0')) + "/" + (String(month).padStart(2, '0')) + "/" + (String(year).padStart(4, '0'));
+
+            document.getElementById('todays-date').innerHTML = (String(day).padStart(2, '0'));
+            document.getElementById('todays-month').innerHTML = (String(month).padStart(2, '0'));
+            document.getElementById('todays-year').innerHTML = (String(year).padStart(4, '0'));
+
+            var currentDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+            day = currentDate.getDate();
+            month = currentDate.getMonth() + 1;
+            year = currentDate.getFullYear();
+            tomorrowDate = (String(day).padStart(2, '0')) + "/" + (String(month).padStart(2, '0')) + "/" + (String(year).padStart(4, '0'));
+
+            document.getElementById('tomorrows-date').innerHTML = (String(day).padStart(2, '0'));
+            document.getElementById('tomorrows-month').innerHTML = (String(month).padStart(2, '0'));
+            document.getElementById('tomorrows-year').innerHTML = (String(year).padStart(4, '0'));
+        }
+
+        function setToday() {
+            todaybool = true;
+            /*Activate Today btn*/
+            btn_today.style.backgroundColor = '#202020';
+            btn_today.style.borderBlockColor = '#202020';
+            btn_today.style.color = '#E6BD4C';
+            today.classList.remove('opacity-50');
+
+            /*Deactivate Tomorrow btn*/
+            btn_tomorrow.style.backgroundColor = '#E6BD4C';
+            btn_tomorrow.style.borderBlockColor = '#202020';
+            btn_tomorrow.style.color = '#000000';
+            tomorrow.classList.add('opacity-50');
+
+        }
+        function setTomorrow() {
+            todaybool = false;
+            /*Deactivate Today btn*/
+            btn_today.style.backgroundColor = '#E6BD4C';
+            btn_today.style.borderBlockColor = '#202020';
+            btn_today.style.color = '#000000';
+            today.classList.add('opacity-50');
+
+            /*Activate Tomorrow btn*/
+            btn_tomorrow.style.backgroundColor = '#202020';
+            btn_tomorrow.style.borderBlockColor = '#202020';
+            btn_tomorrow.style.color = '#E6BD4C';
+            tomorrow.classList.remove('opacity-50');
+        }
+
+        //HOURS
+        var hour_text = document.getElementById('hour-text');
+        var mins_text = document.getElementById('mins-text');
+        var arrow_upH = document.getElementById('arrow-upH');
+        var arrow_downH = document.getElementById('arrow-downH');
+        var arrow_upM = document.getElementById('arrow-upM');
+        var arrow_downM = document.getElementById('arrow-downM');
+
+        var hour_text2 = document.getElementById('hour-text2');
+        var mins_text2 = document.getElementById('mins-text2');
+        var arrow_upH2 = document.getElementById('arrow-upH2');
+        var arrow_downH2 = document.getElementById('arrow-downH2');
+        var arrow_upM2 = document.getElementById('arrow-upM2');
+        var arrow_downM2 = document.getElementById('arrow-downM2');
+
+        var hour = 7;
+        var min = 0;
+        var hour2 = 7;
+        var min2 = 0;
+
+        function upH(par) {
+            if (par == 1) {
+                if (hour != 7) {
+                    hour--;
+                    hour_text.innerText = (String(hour).padStart(2, '0'));
+                    if (arrow_downH.classList == "px-1 fs-4 bi bi-caret-down") {
+                        arrow_downH.classList.add('bi-caret-down-fill');
+                        arrow_downH.classList.remove('bi-caret-down');
+                    }
+                    if (hour == 7) {
+                        arrow_upH.classList.add('bi-caret-up');
+                        arrow_upH.classList.remove('bi-caret-up-fill');
+                    }
+                }
+            }
+            else if (par == 2) {
+                if (hour2 != 7) {
+                    hour2--;
+                    hour_text2.innerText = (String(hour2).padStart(2, '0'));
+                    if (arrow_downH2.classList == "px-1 fs-4 bi bi-caret-down") {
+                        arrow_downH2.classList.add('bi-caret-down-fill');
+                        arrow_downH2.classList.remove('bi-caret-down');
+                    }
+                    if (hour2 == 7) {
+                        arrow_upH2.classList.add('bi-caret-up');
+                        arrow_upH2.classList.remove('bi-caret-up-fill');
+                    }
+                }
+            }
+        }
+
+        function downH(par) {
+            if (par == 1) {
+                if (hour != 20) {
+                    hour++;
+                    hour_text.innerText = (String(hour).padStart(2, '0'));
+                    if (arrow_upH.classList == "px-1 fs-4 bi bi-caret-up") {
+                        arrow_upH.classList.add('bi-caret-up-fill');
+                        arrow_upH.classList.remove('bi-caret-up');
+                    }
+                    if (hour == 20) {
+                        arrow_downH.classList.add('bi-caret-down');
+                        arrow_downH.classList.remove('bi-caret-down-fill');
+
+                    }
+                }
+            }
+            else if (par == 2) {
+                if (hour2 != 20) {
+                    hour2++;
+                    hour_text2.innerText = (String(hour2).padStart(2, '0'));
+                    if (arrow_upH2.classList == "px-1 fs-4 bi bi-caret-up") {
+                        arrow_upH2.classList.add('bi-caret-up-fill');
+                        arrow_upH2.classList.remove('bi-caret-up');
+                    }
+                    if (hour2 == 20) {
+                        arrow_downH2.classList.add('bi-caret-down');
+                        arrow_downH2.classList.remove('bi-caret-down-fill');
+
+                    }
+                }
+            }
+        }
+
+        function upM(par) {
+            if (par == 1) {
+                if (min != 0) {
+                    mins_text.innerText = '';
+                    if (min <= 15) {
+                        min = 0;
+                    }
+                    else if (min <= 30) {
+                        min = 15;
+                    }
+                    else if (min <= 45) {
+                        min = 30;
+                    }
+                    else if (min <= 60) {
+                        min = 45;
+                    }
+                    else {
+                        return "invalid";
+                    }
+                    mins_text.innerText = (String(min).padStart(2, '0'));
+                    if (arrow_downM.classList == "px-1 fs-4 bi bi-caret-down") {
+                        arrow_downM.classList.add('bi-caret-down-fill');
+                        arrow_downM.classList.remove('bi-caret-down');
+                    }
+                    if (min == 0) {
+                        arrow_upM.classList.add('bi-caret-up');
+                        arrow_upM.classList.remove('bi-caret-up-fill');
+                    }
+                }
+            }
+
+            else if (par == 2) {
+                if (min2 != 0) {
+                    mins_text2.innerText = '';
+                    if (min2 <= 15) {
+                        min2 = 0;
+                    }
+                    else if (min2 <= 30) {
+                        min2 = 15;
+                    }
+                    else if (min2 <= 45) {
+                        min2 = 30;
+                    }
+                    else if (min2 <= 60) {
+                        min2 = 45;
+                    }
+                    else {
+                        return "invalid";
+                    }
+                    mins_text2.innerText = (String(min2).padStart(2, '0'));
+                    if (arrow_downM2.classList == "px-1 fs-4 bi bi-caret-down") {
+                        arrow_downM2.classList.add('bi-caret-down-fill');
+                        arrow_downM2.classList.remove('bi-caret-down');
+                    }
+                    if (min2 == 0) {
+                        arrow_upM2.classList.add('bi-caret-up');
+                        arrow_upM2.classList.remove('bi-caret-up-fill');
+                    }
+                }
+            }
+
+        }
+
+        function downM(par) {
+            if (par == 1) {
+                if (min < 60) {
+                    if (min < 15) {
+                        min = 15;
+                    }
+                    else if (min < 30) {
+                        min = 30;
+                    }
+                    else if (min < 45) {
+                        min = 45;
+                    }
+                    else {
+                        return "invalid";
+                    }
+                    mins_text.innerText = String(min).padStart(2, '0');
+                    if (arrow_upM.classList == "px-1 fs-4 bi bi-caret-up") {
+                        arrow_upM.classList.add('bi-caret-up-fill');
+                        arrow_upM.classList.remove('bi-caret-up');
+                    }
+                    if (min == 45) {
+                        arrow_downM.classList.add('bi-caret-down');
+                        arrow_downM.classList.remove('bi-caret-down-fill');
+
+                    }
+                }
+            }
+
+            if (par == 2) {
+                if (min2 < 60) {
+                    if (min2 < 15) {
+                        min2 = 15;
+                    }
+                    else if (min2 < 30) {
+                        min2 = 30;
+                    }
+                    else if (min2 < 45) {
+                        min2 = 45;
+                    }
+                    else {
+                        return "invalid";
+                    }
+                    mins_text2.innerText = String(min2).padStart(2, '0');
+                    if (arrow_upM2.classList == "px-1 fs-4 bi bi-caret-up") {
+                        arrow_upM2.classList.add('bi-caret-up-fill');
+                        arrow_upM2.classList.remove('bi-caret-up');
+                    }
+                    if (min2 == 45) {
+                        arrow_downM2.classList.add('bi-caret-down');
+                        arrow_downM2.classList.remove('bi-caret-down-fill');
+
+                    }
+                }
+            }
+
+        }
+
+        //APPLYING FILTERS
+        function applyingFilters() {
+            let result;
+
+            let fromTime = Number(hour) * 60 + Number(min);
+            let toTime = Number(hour2) * 60 + Number(min2);
+
+            const now = new Date();
+            const nowTime = now.getHours() * 60 + now.getMinutes();
+            console.log(nowTime);
+            console.log(fromTime);
+
+            if (todaybool == true) {
+                result = todayDate;
+                if (toTime < nowTime) {
+                    alert("The end time has already passed. (it ends it)");
+                    return "ERROR";
+                }
+                else if (fromTime < nowTime) { //THIS SHOULD BE TESTED ON FRIDAY
+                    alert("The start time has already passed. (but it proceeds/accepts it)");
+                }
+            }
+            else { result = tomorrowDate; }
+
+            if (fromTime < 7 * 60) {
+                alert("The start time is before business hours (07:00-20:00).");
+                return "ERROR";
+            }
+            if (toTime > (20 * 60)) {
+                alert("The end time is hereafter business hours (07:00-20:00).");
+                return "ERROR";
+            }
+
+            if (((toTime - fromTime) < 5)) {
+                if ((toTime - fromTime) >= 0) {
+                    alert("Less than 5-minute stay.");
+                }
+                else {
+                    alert("Invalid time interval.");
+                }
+                return "ERROR";
+            }
+            else if ((toTime - fromTime) > 8 * 60) {
+                alert("Over 8-hour stay.");
+                return "ERROR";
+            }
+
+            let durationH = ((toTime - fromTime) / 60).toFixed(0);
+            let durationM = (toTime - fromTime) - durationH * 60;
+            let wholeDuration = (String(durationH).padStart(2, '0')) + ":" + (String(durationM).padStart(2, '0')) + ":" + (String(0).padStart(2, '0'));
+
+            result += ", from:" + (String(hour).padStart(2, '0')) + ":" + (String(min).padStart(2, '0')) + " to:" + (String(hour2).padStart(2, '0')) + ":" + (String(min2).padStart(2, '0'));
+            result += "\nThe stay will be " + wholeDuration + ".";
+            alert(result);
+            document.getElementById('close-filter').click();
+        }
+
+        //RESTARTING FILTERS
+        function restartFilter() {
+            hour = 7;
+            hour2 = 7;
+            min = 0;
+            min2 = 0;
+
+            hour_text.innerText = (String(hour).padStart(2, '0'));
+            arrow_upH.classList.add('bi-caret-up');
+            arrow_upH.classList.remove('bi-caret-up-fill');
+
+            hour_text2.innerText = (String(hour2).padStart(2, '0'));
+            arrow_upH2.classList.add('bi-caret-up');
+            arrow_upH2.classList.remove('bi-caret-up-fill');
+
+            mins_text.innerText = (String(min).padStart(2, '0'));
+            arrow_upM.classList.add('bi-caret-up');
+            arrow_upM.classList.remove('bi-caret-up-fill');
+
+            mins_text2.innerText = (String(min2).padStart(2, '0'));
+            arrow_upM2.classList.add('bi-caret-up');
+            arrow_upM2.classList.remove('bi-caret-up-fill');
+
+            setToday();
+        }
+    </script>
+
+    <script id="history-script">
+        function loadHistoryModal() {
+            printActiveBookings();
+            printInactiveBookings();
+        }
+
+        function printActiveBookings() {
+            //При всяко викане на ф-цията, ще се тегли json таблицата
+            let exampleActive = [
+                {
+                    "parkingSpaceId": "A1",
+                    "duration": "04:00:00",
+                    "startTime": "26/02/2024, 09:00"
+                },
+                {
+                    "parkingSpaceId": "A2",
+                    "duration": "08:00:00",
+                    "startTime": "26/02/2024, 12:00"
+                },
+                {
+                    "parkingSpaceId": "A4",
+                    "duration": "07:00:00",
+                    "startTime": "26/02/2024, 11:00"
+                },
+                {
+                    "parkingSpaceId": "A3",
+                    "duration": "04:00:00",
+                    "startTime": "26/02/2024, 10:00"
+                }
+            ];
+            exampleActive.sort(function (a, b) {
+                var dateA = new Date(a.startTime.replace(/(\d{2})\/(\d{2})\/(\d{4}), (\d{2}):(\d{2})/, '$3-$2-$1T$4:$5'));
+                var dateB = new Date(b.startTime.replace(/(\d{2})\/(\d{2})\/(\d{4}), (\d{2}):(\d{2})/, '$3-$2-$1T$4:$5'));
+
+                return dateA - dateB;
+            });
+
+            console.log(exampleActive);
+            let lengthActive = exampleActive.length;
+            let active_table_body = document.getElementById('active-table-body');
+            active_table_body.innerHTML = '';
+            if (lengthActive == 0) {
+                active_table_body.innerHTML = "<h2 class='d-flex justify-content-center w-100'>There are no active bookings.</h2>";
+            }
+            for (let i = 0; i < lengthActive; i++) {
+                let tr = document.createElement('tr');
+                let th = document.createElement('th');
+                th.scope = 'row';
+                th.innerHTML = (i + 1);
+                tr.appendChild(th);
+
+                let tdPlace = document.createElement('td'); let place = exampleActive[i].parkingSpaceId;
+                let tdFrom = document.createElement('td'); let from = exampleActive[i].startTime;
+                let duration = calculateDuration(exampleActive, i);
+                let tdTo = document.createElement('td'); let to = exampleActive[i].startTime.slice(0, 12) + duration;
+                tdPlace.innerHTML = place; tr.appendChild(tdPlace);
+                tdFrom.innerHTML = from; tr.appendChild(tdFrom);
+                tdTo.innerHTML = to; tr.appendChild(tdTo);
+
+                active_table_body.appendChild(tr);
+            }
+        }
+
+        function printInactiveBookings() {
+            //При всяко викане на ф-цията, ще се тегли json таблицата
+            let exampleInactive = [
+                {
+                    "parkingSpaceId": "A2",
+                    "duration": "02:00:00",
+                    "startTime": "24/02/2024, 11:00"
+                },
+                {
+                    "parkingSpaceId": "A4",
+                    "duration": "02:00:00",
+                    "startTime": "20/02/2024, 11:00"
+                },
+                {
+                    "parkingSpaceId": "A1",
+                    "duration": "03:00:00",
+                    "startTime": "26/02/2024, 07:00"
+                },
+                {
+                    "parkingSpaceId": "A3",
+                    "duration": "02:00:00",
+                    "startTime": "23/02/2024, 11:00"
+                }
+            ];
+
+            exampleInactive.sort(function (a, b) {
+                var dateA = new Date(a.startTime.replace(/(\d{2})\/(\d{2})\/(\d{4}), (\d{2}):(\d{2})/, '$3-$2-$1T$4:$5'));
+                var dateB = new Date(b.startTime.replace(/(\d{2})\/(\d{2})\/(\d{4}), (\d{2}):(\d{2})/, '$3-$2-$1T$4:$5'));
+
+                return dateB - dateA;
+            });
+
+            let lengthInactive = exampleInactive.length;
+            let inactive_table_body = document.getElementById('inactive-table-body');
+            inactive_table_body.innerHTML = '';
+            if (lengthInactive == 0) {
+                inactive_table_body.innerHTML = "<h2 class='d-flex justify-content-center w-100'>There are no active bookings.</h2>";
+            }
+            for (let i = 0; i < lengthInactive; i++) {
+                let tr = document.createElement('tr');
+                let th = document.createElement('th');
+                th.scope = 'row';
+                th.innerHTML = (i + 1);
+                tr.appendChild(th);
+
+                let tdPlace = document.createElement('td'); let place = exampleInactive[i].parkingSpaceId;
+                let tdFrom = document.createElement('td'); let from = exampleInactive[i].startTime;
+                let duration = calculateDuration(exampleInactive, i);
+                let tdTo = document.createElement('td'); let to = exampleInactive[i].startTime.slice(0, 12) + duration;
+                tdPlace.innerHTML = place; tr.appendChild(tdPlace);
+                tdFrom.innerHTML = from; tr.appendChild(tdFrom);
+                tdTo.innerHTML = to; tr.appendChild(tdTo);
+
+                inactive_table_body.appendChild(tr);
+            }
+        }
+
+        function calculateDuration(tableRow, i) {
+            let durationH = Number(tableRow[i].duration.slice(0, 2));
+            let durationM = Number(tableRow[i].duration.slice(3, 5));
+            durationH += Number(tableRow[i].startTime.slice(12, 14));
+            durationM += Number(tableRow[i].startTime.slice(15, 17));
+            return String(durationH).padStart(2, '0') + ":" + String(durationM).padStart(2, '0');
+        }
+    </script>
+
+</body>
+
+</html>

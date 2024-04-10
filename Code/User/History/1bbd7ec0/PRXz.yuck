@@ -1,0 +1,13 @@
+(defwidget clock []
+    (column
+      (label :class "hour" :text {formattime(EWW_TIME, "%H")})
+      (label :class "minutes" :text {formattime(EWW_TIME, "%M")})
+    )
+  )
+  
+
+(defwidget big_clock []
+    (box :class "big_clock_box" :orientation "h" :space-evenly false
+        (label :class "big_clock_label" :text {formattime(EWW_TIME, "%H:%M")})
+    )
+)

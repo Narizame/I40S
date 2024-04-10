@@ -1,0 +1,21 @@
+(defwidget bar []
+    (box :class "bar-widget" :orientation "v" :space-evenly true
+
+        (box :orientation "v" :space-evenly false :halign "start"
+            (logo)
+            (workspaces)
+        )
+
+        (box :orientation "v" :space-evenly false :halign "center"
+            (taskbar)
+        )
+
+        (box :orientation "v" :space-evenly false :halign "end"
+            (tray_button)
+            (language)
+            (picker)
+            (indicator)
+        )
+    )
+    
+)

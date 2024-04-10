@@ -1,0 +1,126 @@
+body{
+    background-color: #D5D5D5;
+    /*background-image: url(/images/proekt-dizain.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 190vh 100vh;*/
+}
+
+/*Title and Subtitle*/
+.main{ 
+    position: relative;
+    width: 100%;
+    margin-top: 5vh;
+}
+h1{
+    font-family: 'Yeseva One', serif;
+    font-size: 10vh;
+    text-align: center;
+    margin: 0vh;
+}
+h2{
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 4vh;
+    text-align: center;
+}
+
+/*button format*/
+a{
+    color: #000;
+    text-decoration: none;
+}
+button:hover{
+    opacity: 0.7;
+    transition: 0.5s;
+    background-color: #7598A4;
+}
+
+/*Hotel Button and Image container*/
+.hotelbtn_img{
+    position: relative;
+    width: 120vh;
+    margin-left: 15vh;
+}
+ /*The Hotel Button*/
+#the-hotel{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'Yaseva One', serif;
+    font-size: 4vh;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+#the-hotel a{
+    color: #000;
+    text-decoration: none;
+}
+#the-hotel:hover{
+    opacity: 0.7;
+    transition: 0.5s;
+    background-color: #ffffff;
+}
+
+/*Restaurant Container*/
+.restaurantbtn_img{
+    margin-left: 1vh;
+}
+
+/* #restaurant{
+    background-color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'Yaseva One', serif;
+    font-size: 4vh;
+    font-weight: bold;
+    margin-left: 46vh;
+    margin-top: 13vh;
+    padding: 1vh 3.7vh;
+    border: none;
+}
+
+#wine{
+    background-color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'Yaseva One', serif;
+    font-size: 4vh;
+    font-weight: bold;
+    margin-left: 35.5vh;
+    margin-top: 31.5vh;
+    padding: 1vh 10vh;
+    border: none;
+}
+
+#rooms{
+    background-color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'Yaseva One', serif;
+    font-size: 4vh;
+    font-weight: bold;
+    margin-left: 23.6vh;
+    margin-top: 31.5vh;
+    padding: 1vh 8vh;
+    border: none;
+}
+
+#activities{
+    background-color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'Yaseva One', serif;
+    font-size: 4vh;
+    font-weight: bold;
+    margin-left: 22.3vh;
+    margin-top: 31.5vh;
+    padding: 1vh 4vh;
+    border: none;
+}
+.index{
+    height: 100vh;
+}
+.container{
+    margin-top: 23vh;
+} */

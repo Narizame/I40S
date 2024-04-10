@@ -1,0 +1,88 @@
+<<<<<<< HEAD
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+
+>>>>>>> origin/viki
+body {
+  background-image: url('/p3 praktika/images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+
+}
+
+#particle-canvas {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.modul {
+<<<<<<< HEAD
+  background-color: rgba(225, 176, 46, 0.7);
+=======
+  background-color: rgb(205, 162, 43);
+  
+  transform: translate(-50%, -50%);
+  z-index: 1;
+>>>>>>> origin/viki
+
+}
+
+.btn {
+  width: 150px;
+  background-color: #202020;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: #D6CC56;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-color: #ADADA2;
+  color: #2d2101;
+}
+
+<<<<<<< HEAD
+.logo{
+  font-size: 80px;
+}
+
+.name{
+  font-family: "Poppins", sans-serif;
+=======
+.logo {
+  font-size: 80px;
+}
+
+.name {
+  font-family: 'Fredoka One';
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+  .modul {
+    margin-left: 15%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .flex-div {
+    display: flex;
+    justify-content: center;
+  }
+>>>>>>> origin/viki
+}

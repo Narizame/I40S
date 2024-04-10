@@ -1,0 +1,10 @@
+(defwidget clock []
+    (let [time (formattime EWW_TIME "%H:%M")]
+      (label :class "clock" :text (str (subs time 0 2) "\n" (subs time 3)))))
+  
+
+(defwidget big_clock []
+    (box :class "big_clock_box" :orientation "h" :space-evenly false
+        (label :class "big_clock_label" :text {formattime(EWW_TIME, "%H:%M")})
+    )
+)

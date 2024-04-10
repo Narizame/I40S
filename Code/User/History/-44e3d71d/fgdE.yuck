@@ -1,0 +1,136 @@
+(defwindow bar
+    :monitor 0
+    :geometry (geometry :width "1%"
+                        :anchor "center left"
+                    )
+    :exclusive true
+    :namespace "eww"
+    (bar)
+)
+
+(defwindow control_center
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry
+                    :anchor "bottom right"
+                    :width "2px"
+                    :height "2px"
+                )
+    :namespace "eww"
+    (control_center)
+)
+
+(defwindow launcher
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry
+                    :anchor "left bottom"
+                    :width "2px"
+                    :height "2px"
+                )
+    :focusable true
+    :namespace "eww"
+    (launcher)
+)
+
+(defwindow notifications_popup
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry
+                    :anchor "top center"
+                    :width "2px"
+                    :height "2px"
+                )
+    :namespace "eww"
+    (notifications_popup_widget)
+)
+
+(defwindow osd
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry 
+                    :anchor "bottom center"
+                    :width "2px"
+                    :height "2px"
+                )
+    :namespace "eww"
+    (volume_osd)
+)
+
+(defwindow powermenu
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry 
+                    :anchor "center"
+                    :width "100%"
+                    :height "120%")
+    :namespace "eww-blur"
+    (powermenu)
+)
+
+(defwindow recorder_menu
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry 
+                    :anchor "center"
+                    :width "100%"
+                    :height "120%")
+    :namespace "eww-blur"
+    (recorder_menu)
+)
+
+(defwindow tray
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry 
+                    :anchor "bottom left"
+                    :width "2px"
+                    :height "2px"
+                    :x "82%"
+                )
+    :namespace "eww"
+    (tray)
+)
+
+(defwindow bg_widgets
+    :monitor 0
+    :stacking "bg"
+    :geometry (geometry 
+                    :anchor "center"
+                    :width "100%"
+                    :height "100%")
+    :namespace "eww"
+    (bg_widgets)
+)
+
+(defwidget music []
+    (revealer :transition "slideup" :reveal {mpris == "{}" ? false : mpris.name == "" ? false : true} :duration {ANIM_DURATION}
+        (box :orientation "v" :class "music" :space-evenly false
+            (box :orientation "h" :space-evenly false
+                (box :orientation "h" :space-evenly false :class "music-image" :style "background-image: url('${mpris.artUrl}');")
+                (box :orientation "v" :space-evenly false :class "music-text" :hexpand true
+                    (box :orientation "h" :space-evenly false :halign "end" :class "music-name"
+                        (label :text {mpris.name})
+                    )
+                    (box :orientation "v" :space-evenly false
+                        (label :halign "start" :class "music-title" :limit-width 20 :text {mpris.title})
+                        (label :halign "start" :class "music-artist" :limit-width 20 :text {mpris.artist})
+                    )
+                )
+            )
+            (box :orientation "v" :space-evenly false :class "music-scale-box" :visible {mpris.length == "" ? false : true}
+                (scale :min 0 :max {mpris.length} :active true :value {mpris_positions[mpris.name].position} :onchange "playerctl position {}" :class "music-scale")
+                (box :orientation "h" :space-evenly false :hexpand true
+                    (label :hexpand true :class "music-strtime" :text {mpris_positions[mpris.name].positionStr} :halign "start")
+                    (label :hexpand true :class "music-strtime" :text {mpris.lengthStr} :halign "end")
+                )
+            )
+            (box :orientation "h" :space-evenly false :halign "center" :class "music-actions-box"
+                (button :class "music-action" :onclick "playerctl previous" "󰒮")
+                (button :class "music-action" :onclick "playerctl play-pause" {mpris.status == "Playing" ? "󰓛" : "󰐊"})
+                (button :class "music-action" :onclick "playerctl next" "󰒭")
+            )
+                    
+        )
+    )
+)

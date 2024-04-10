@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 200vh; /* Adjust the height based on your content */
+}
+
+#hotel {
+    width: 100%;
+    height: auto;
+    transform: translateY(50%);
+    transition: transform 0.5s ease-in-out;
+}
+
+body:hover #hotel {
+    transform: translateY(0);
+}

@@ -1,0 +1,10 @@
+(defwidget bg_widgets []
+    (box :orientation "v" :space-evenly true
+        (box :orientation "v" :space-evenly false :valign "center" :halign "end"
+            (big_clock)
+        )
+        (box :orientation "v" :space-evenly false :valign "center"
+            (weather)
+        )
+    )
+)

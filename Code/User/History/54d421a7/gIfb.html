@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../login_animation/login_animation.css">
+    <title>Animation</title>
+</head>
+
+<body>
+    <div id="particle-canvas"> </div>
+
+    <!-- CONTAINER -->
+    <div class="container position-absolute top-50 start-50 translate-middle" id="container">
+
+        <div class="form-container sign-up-container" id="signUpForm">
+            <form action="#">
+                <div class="position-absolute fixed-top" style="background-color: #E1B02E;">
+                    <button class="overlay-btn m-4" id="respSignUpBtn">Sign Up</button>
+                    <button class="overlay-btn m-4" id="respLogInBtn">Log in</button>
+                </div>
+                <h1 class="fw-bold">Create</h1>
+                <h1 class="fw-bold mb-4">Account</h1>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="firstName" placeholder="First Name" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="lastName" placeholder="Last Name" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="email" id="email" placeholder="Email" />
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Username" />
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" />
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="plate" placeholder="Plate" />
+                </div>
+                <input type="submit" value="Sign Up" class="btn solid mt-4" />
+            </form>
+        </div>
+        <div class="form-container log-in-container">
+            <form action="#">
+                
+                <h1 class="fw-bold mb-5">Log In</h1>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Username" />
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" />
+                </div>
+                <a href="#" class="m-2">Forgot your password?</a>
+                <input type="submit" value="Log in" class="btn solid mt-4" />
+            </form>
+        </div>
+
+        <!-- OVERLAY -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 class="m-3">Already have an account?</h1>
+                    <p class="m-3">To keep connected with us please login with your personal info</p>
+                    <button class="overlay-btn m-4" id="signIn">Log In</button>
+                </div>
+
+                <div class="overlay-panel overlay-right">
+                    <h1 class="m-3">Don't have an account?</h1>
+                    <p class="m-3">Enter your personal details and book a parking space only for you!!</p>
+                    <button class="overlay-btn m-4" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../login_animation/login_animation.js"></script>
+    <script src="../js_animation_canvas/particle.js"></script>
+</body>
+
+</html>

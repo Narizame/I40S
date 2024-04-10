@@ -1,0 +1,42 @@
+/* config.css */
+
+/* Primary color */
+$primary: ${wal:color1};
+$onPrimary: ${wal:color15};
+
+/* Secondary color */
+$secondary: ${wal:color2};
+$onSecondary: ${wal:color15};
+
+/* Tertiary color */
+$tertiary: ${wal:color3};
+$onTertiary: ${wal:color15};
+
+/* Error color */
+$error: ${wal:color4};
+$onError: ${wal:color15};
+
+/* Background color */
+$background: ${wal:background};
+$onBackground: ${wal:foreground};
+
+/* Surface color */
+$surface: ${wal:background};
+$onSurface: ${wal:foreground};
+
+/* Surface variant color */
+$surfaceVariant: ${wal:color8};
+$onSurfaceVariant: ${wal:color15};
+
+/* Outline color */
+$outline: ${wal:color9};
+
+/* Shadow color */
+$shadow: ${wal:color0};
+
+/* Inverse surface color */
+$inverseSurface: ${wal:foreground};
+$inverseOnSurface: ${wal:background};
+
+/* Inverse primary color */
+$inversePrimary: ${wal:color5};

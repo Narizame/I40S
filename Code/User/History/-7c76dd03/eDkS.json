@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Wal",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.preferredDarkColorTheme": "Wal Bordered",
+    "workbench.preferredHighContrastColorTheme": "Wal Bordered",
+    "window.autoDetectColorScheme": true,
+    "window.titleBarStyle": "custom",
+    "window.dialogStyle": "custom",
+    "editor.fontSize": 16
+}
