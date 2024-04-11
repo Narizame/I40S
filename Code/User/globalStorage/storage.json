@@ -29,6 +29,7 @@
             "file:///home/I40S/.config/eww": "__default__profile__",
             "file:///home/I40S/.config/hypr": "__default__profile__",
             "file:///home/I40S/iso/I40ST": "__default__profile__",
+            "file:///home/I40S/iso/I40S": "__default__profile__",
             "file:///home/I40S/.config": "__default__profile__"
         },
         "emptyWindows": {}
@@ -1753,9 +1754,9 @@
             "backupPath": "/home/I40S/.config/Code/Backups/e080052459da43efa2bfecb77bf6bcc0",
             "uiState": {
                 "mode": 1,
-                "x": 1931,
+                "x": 2262,
                 "y": 11,
-                "width": 1898,
+                "width": 938,
                 "height": 1058
             }
         },

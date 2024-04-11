@@ -1,0 +1,4 @@
+2024-04-11 08:25:17.020 [info] Started local extension host with pid 13150.
+2024-04-11 08:25:18.753 [error] [Extension Host] (node:13150) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `exe --trace-deprecation ...` to show where the warning was created)
+2024-04-11 08:25:21.122 [info] [perf] Render performance baseline is 33ms

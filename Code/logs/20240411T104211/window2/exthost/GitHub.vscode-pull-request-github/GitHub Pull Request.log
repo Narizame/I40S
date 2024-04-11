@@ -1,0 +1,12 @@
+2024-04-11 10:49:39.638 [warning] /home/I40S/.ssh/config: ENOENT: no such file or directory, open '/home/I40S/.ssh/config'
+2024-04-11 10:49:39.638 [info] Activation> Extension version: 0.86.1
+2024-04-11 10:49:39.850 [info] Looking for git repository
+2024-04-11 10:49:39.850 [info] Found 0 repositories during activation
+2024-04-11 10:49:39.850 [info] Git repository found, initializing review manager and pr tree view.
+2024-04-11 10:49:39.851 [info] Registering git provider
+2024-04-11 10:50:00.602 [warning] /home/I40S/.ssh/config: ENOENT: no such file or directory, open '/home/I40S/.ssh/config'
+2024-04-11 10:50:00.602 [info] Activation> Extension version: 0.86.1
+2024-04-11 10:50:00.696 [info] Looking for git repository
+2024-04-11 10:50:00.696 [info] Found 0 repositories during activation
+2024-04-11 10:50:00.696 [info] Git repository found, initializing review manager and pr tree view.
+2024-04-11 10:50:00.696 [info] Registering git provider

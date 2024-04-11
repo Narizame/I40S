@@ -1,0 +1,12 @@
+.taskbar-item {
+    @include window;
+    background-color: $surfaceVariant;
+    margin: 0 0rem;
+    transition: 0.3s;
+    padding: 2.5 0.1rem;
+    border-radius: 0.25rem;
+}
+
+.taskbar-item:hover {
+    background-color: mix($surface, $onSurface, 70%);
+}

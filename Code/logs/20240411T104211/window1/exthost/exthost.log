@@ -1,0 +1,23 @@
+2024-04-11 10:42:13.199 [info] Extension host with pid 2102 started
+2024-04-11 10:42:13.199 [info] Skipping acquiring lock for /home/I40S/.config/Code/User/workspaceStorage/5ecbbd13792e5f5d4a281e2c58390dd3.
+2024-04-11 10:42:13.502 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-04-11 10:42:13.508 [info] ExtensionService#_doActivateExtension vscode.css-language-features, startup: false, activationEvent: 'onLanguage:scss'
+2024-04-11 10:42:13.832 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-04-11 10:42:13.835 [info] ExtensionService#_doActivateExtension dlasagno.wal-theme, startup: true, activationEvent: '*'
+2024-04-11 10:42:13.868 [info] ExtensionService#_doActivateExtension pixl-garden.BongoCat, startup: true, activationEvent: '*'
+2024-04-11 10:42:13.873 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-04-11 10:42:13.897 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-04-11 10:42:13.940 [info] Eager extensions activated
+2024-04-11 10:42:13.987 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 10:42:13.989 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 10:42:13.997 [info] ExtensionService#_doActivateExtension Catppuccin.catppuccin-vsc, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 10:42:14.001 [info] ExtensionService#_doActivateExtension eamodio.gitlens, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 10:42:14.040 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onStartupFinished', root cause: GitHub.vscode-pull-request-github
+2024-04-11 10:42:14.057 [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 10:42:14.067 [info] ExtensionService#_doActivateExtension tonybaloney.vscode-pets, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 10:42:14.084 [info] ExtensionService#_doActivateExtension vscode-icons-team.vscode-icons, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 10:42:14.285 [info] ExtensionService#_doActivateExtension ms-vsliveshare.vsliveshare, startup: false, activationEvent: 'api', root cause: eamodio.gitlens
+2024-04-11 10:42:14.412 [info] ExtensionService#_doActivateExtension GitHub.vscode-pull-request-github, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 10:42:20.562 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10096
+2024-04-11 10:42:21.152 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10096
+2024-04-11 13:06:13.374 [warning] TextEditor is closed/disposed

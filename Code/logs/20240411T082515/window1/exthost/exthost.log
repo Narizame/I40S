@@ -1,0 +1,62 @@
+2024-04-11 08:25:17.427 [info] Extension host with pid 13150 started
+2024-04-11 08:25:17.427 [info] Skipping acquiring lock for /home/I40S/.config/Code/User/workspaceStorage/5ecbbd13792e5f5d4a281e2c58390dd3.
+2024-04-11 08:25:17.792 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-04-11 08:25:17.802 [info] ExtensionService#_doActivateExtension eww-yuck.yuck, startup: false, activationEvent: 'onLanguage:yuck'
+2024-04-11 08:25:17.920 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-04-11 08:25:17.922 [info] ExtensionService#_doActivateExtension dlasagno.wal-theme, startup: true, activationEvent: '*'
+2024-04-11 08:25:17.944 [info] ExtensionService#_doActivateExtension pixl-garden.BongoCat, startup: true, activationEvent: '*'
+2024-04-11 08:25:17.952 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-04-11 08:25:17.981 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-04-11 08:25:18.045 [info] Eager extensions activated
+2024-04-11 08:25:18.152 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 08:25:18.154 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 08:25:18.162 [info] ExtensionService#_doActivateExtension Catppuccin.catppuccin-vsc, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 08:25:18.166 [info] ExtensionService#_doActivateExtension eamodio.gitlens, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 08:25:18.205 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onStartupFinished', root cause: GitHub.vscode-pull-request-github
+2024-04-11 08:25:18.219 [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 08:25:18.224 [info] ExtensionService#_doActivateExtension tonybaloney.vscode-pets, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 08:25:18.233 [info] ExtensionService#_doActivateExtension vscode-icons-team.vscode-icons, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 08:25:18.556 [info] ExtensionService#_doActivateExtension ms-vsliveshare.vsliveshare, startup: false, activationEvent: 'api', root cause: eamodio.gitlens
+2024-04-11 08:25:18.733 [info] ExtensionService#_doActivateExtension GitHub.vscode-pull-request-github, startup: false, activationEvent: 'onStartupFinished'
+2024-04-11 08:25:23.676 [warning] TextEditor is closed/disposed
+2024-04-11 08:25:36.241 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10093
+2024-04-11 08:25:37.038 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10098
+2024-04-11 08:26:18.639 [warning] TextEditor is closed/disposed
+2024-04-11 08:26:54.850 [warning] TextEditor is closed/disposed
+2024-04-11 08:27:08.114 [warning] TextEditor is closed/disposed
+2024-04-11 08:27:29.991 [warning] TextEditor is closed/disposed
+2024-04-11 08:27:30.070 [info] ExtensionService#_doActivateExtension vscode.css-language-features, startup: false, activationEvent: 'onLanguage:scss'
+2024-04-11 08:27:38.124 [warning] TextEditor is closed/disposed
+2024-04-11 08:27:59.318 [warning] TextEditor is closed/disposed
+2024-04-11 08:28:22.430 [warning] TextEditor is closed/disposed
+2024-04-11 08:28:31.511 [warning] TextEditor is closed/disposed
+2024-04-11 08:28:32.717 [warning] TextEditor is closed/disposed
+2024-04-11 08:29:53.271 [warning] TextEditor is closed/disposed
+2024-04-11 08:30:49.345 [warning] TextEditor is closed/disposed
+2024-04-11 08:31:14.960 [warning] TextEditor is closed/disposed
+2024-04-11 08:31:30.943 [warning] TextEditor is closed/disposed
+2024-04-11 08:32:45.772 [warning] TextEditor is closed/disposed
+2024-04-11 08:33:01.666 [warning] TextEditor is closed/disposed
+2024-04-11 08:33:17.057 [warning] TextEditor is closed/disposed
+2024-04-11 08:33:19.145 [warning] TextEditor is closed/disposed
+2024-04-11 08:33:20.630 [warning] TextEditor is closed/disposed
+2024-04-11 08:33:23.272 [warning] TextEditor is closed/disposed
+2024-04-11 08:34:05.951 [warning] TextEditor is closed/disposed
+2024-04-11 08:34:06.934 [warning] TextEditor is closed/disposed
+2024-04-11 08:34:08.086 [warning] TextEditor is closed/disposed
+2024-04-11 08:34:09.745 [warning] TextEditor is closed/disposed
+2024-04-11 08:34:37.396 [warning] TextEditor is closed/disposed
+2024-04-11 08:34:39.674 [warning] TextEditor is closed/disposed
+2024-04-11 08:34:41.301 [warning] TextEditor is closed/disposed
+2024-04-11 08:34:55.244 [warning] TextEditor is closed/disposed
+2024-04-11 08:34:58.363 [warning] TextEditor is closed/disposed
+2024-04-11 08:34:59.093 [warning] TextEditor is closed/disposed
+2024-04-11 08:34:59.634 [warning] TextEditor is closed/disposed
+2024-04-11 08:35:17.019 [warning] TextEditor is closed/disposed
+2024-04-11 08:35:23.066 [warning] TextEditor is closed/disposed
+2024-04-11 08:35:44.943 [warning] TextEditor is closed/disposed
+2024-04-11 08:36:08.658 [warning] TextEditor is closed/disposed
+2024-04-11 08:38:36.052 [warning] TextEditor is closed/disposed
+2024-04-11 08:39:28.833 [warning] TextEditor is closed/disposed
+2024-04-11 08:39:46.117 [warning] TextEditor is closed/disposed
+2024-04-11 08:40:07.313 [warning] TextEditor is closed/disposed

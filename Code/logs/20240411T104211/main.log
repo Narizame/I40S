@@ -1,0 +1,25 @@
+2024-04-11 10:42:11.830 [info] update#setState idle
+2024-04-11 10:42:41.834 [info] update#setState checking for updates
+2024-04-11 10:42:43.528 [info] update#setState idle
+2024-04-11 10:49:59.132 [error] [UtilityProcessWorker]: terminated unexpectedly with code 15, signal: unknown
+2024-04-11 10:49:59.133 [error] [UtilityProcess id: 2, type: fileWatcher, pid: 11921]: crashed with code 15 and reason 'killed'
+2024-04-11 10:49:59.148 [info] Extension host with pid 11931 exited with code: 0, signal: unknown.
+2024-04-11 11:22:15.601 [info] Extension host with pid 12127 exited with code: 0, signal: unknown.
+2024-04-11 11:24:00.847 [error] [UtilityProcessWorker]: terminated unexpectedly with code 15, signal: unknown
+2024-04-11 11:24:00.847 [error] [UtilityProcess id: 3, type: fileWatcher, pid: 44277]: crashed with code 15 and reason 'killed'
+2024-04-11 11:24:00.862 [info] Extension host with pid 44287 exited with code: 0, signal: unknown.
+2024-04-11 11:29:18.190 [error] update#isLatestVersion(): failed to check for updates
+2024-04-11 11:29:18.190 [error] Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:108522)
+    at SimpleURLLoaderWrapper.emit (node:events:517:28)
+2024-04-11 11:42:41.840 [info] update#setState checking for updates
+2024-04-11 11:42:42.273 [info] update#setState idle
+2024-04-11 12:37:35.614 [warning] No ptyHost heartbeat after 6 seconds
+2024-04-11 12:42:43.861 [info] update#setState checking for updates
+2024-04-11 12:42:44.035 [info] update#setState idle
+2024-04-11 13:04:24.836 [error] [UtilityProcessWorker]: terminated unexpectedly with code 15, signal: unknown
+2024-04-11 13:04:24.837 [error] [UtilityProcess id: 4, type: fileWatcher, pid: 50315]: crashed with code 15 and reason 'killed'
+2024-04-11 13:04:24.871 [info] Extension host with pid 50325 exited with code: 0, signal: unknown.
+2024-04-11 13:28:16.208 [warning] No ptyHost heartbeat after 6 seconds
+2024-04-11 13:35:31.529 [info] Extension host with pid 2102 exited with code: 0, signal: unknown.
+2024-04-11 13:35:31.530 [error] ptyHost terminated unexpectedly with code 0

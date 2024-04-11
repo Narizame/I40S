@@ -1,0 +1,2 @@
+GitLens v14.9.0 activating in Visual Studio Code (1.88.0) on the desktop; language='en', logLevel='warn', defaultDateLocale='null' (badfb33583f0aa74db1d35cd5c3415e0304720b54107edb8e6540b0fda79b612|d01659b8-3b7a-44f0-b328-199987e801d31712812385818)
+To enable debug logging, set `"gitlens.outputLevel: "debug"` or run "GitLens: Enable Debug Logging" from the Command Palette
