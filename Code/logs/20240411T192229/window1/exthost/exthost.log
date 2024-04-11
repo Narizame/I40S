@@ -29,3 +29,4 @@
 2024-04-11 19:24:38.034 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:markdown'
 2024-04-11 19:24:38.039 [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
 2024-04-11 19:24:38.328 [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: vscode.markdown-language-features
+2024-04-11 19:26:36.026 [warning] TextEditor is closed/disposed
