@@ -1,0 +1,37 @@
+2024-04-30 15:28:02.247 [warning] /home/I40S/.ssh/config: ENOENT: no such file or directory, open '/home/I40S/.ssh/config'
+2024-04-30 15:28:02.247 [info] Activation> Extension version: 0.86.1
+2024-04-30 15:28:02.639 [info] Looking for git repository
+2024-04-30 15:28:02.639 [info] Found 0 repositories during activation
+2024-04-30 15:28:02.639 [info] Git repository found, initializing review manager and pr tree view.
+2024-04-30 15:28:02.646 [info] Registering git provider
+2024-04-30 15:28:02.646 [info] Review+0> Validate state in progress
+2024-04-30 15:28:02.646 [info] Review+0> Validating state...
+2024-04-30 15:28:02.665 [info] Found GitHub remote for folder /home/I40S/.config
+2024-04-30 15:28:03.053 [info] Trying to use globalState for assignableUsers.
+2024-04-30 15:28:03.127 [info] Review+0> No matching pull request metadata found locally for current branch main
+2024-04-30 15:28:03.142 [info] Using globalState assignableUsers for 1.
+2024-04-30 15:28:03.484 [info] Review+0> No matching pull request metadata found on GitHub for current branch main
+2024-04-30 15:28:07.042 [info] Repo state for file:///home/I40S/.config changed.
+2024-04-30 15:28:07.042 [info] Repo file:///home/I40S/.config has already been setup.
+2024-04-30 15:28:16.156 [warning] /home/I40S/.ssh/config: ENOENT: no such file or directory, open '/home/I40S/.ssh/config'
+2024-04-30 15:28:16.156 [info] Activation> Extension version: 0.86.1
+2024-04-30 15:28:16.305 [info] Looking for git repository
+2024-04-30 15:28:16.305 [info] Found 0 repositories during activation
+2024-04-30 15:28:16.305 [info] Git repository found, initializing review manager and pr tree view.
+2024-04-30 15:28:16.306 [info] Registering git provider
+2024-04-30 15:28:54.137 [warning] /home/I40S/.ssh/config: ENOENT: no such file or directory, open '/home/I40S/.ssh/config'
+2024-04-30 15:28:54.137 [info] Activation> Extension version: 0.86.1
+2024-04-30 15:28:54.462 [info] Looking for git repository
+2024-04-30 15:28:54.462 [info] Found 0 repositories during activation
+2024-04-30 15:28:54.462 [info] Git repository found, initializing review manager and pr tree view.
+2024-04-30 15:28:54.465 [info] Registering git provider
+2024-04-30 15:28:54.869 [info] Git initialization state changed: state=initialized
+2024-04-30 15:28:54.869 [info] Review+0> Validate state in progress
+2024-04-30 15:28:54.869 [info] Review+0> Validating state...
+2024-04-30 15:28:54.883 [info] Found GitHub remote for folder /home/I40S/.config
+2024-04-30 15:28:55.259 [info] Trying to use globalState for assignableUsers.
+2024-04-30 15:28:55.323 [info] Review+0> No matching pull request metadata found locally for current branch main
+2024-04-30 15:28:55.345 [info] Using globalState assignableUsers for 1.
+2024-04-30 15:28:55.748 [info] Review+0> No matching pull request metadata found on GitHub for current branch main
+2024-04-30 15:28:59.250 [info] Repo state for file:///home/I40S/.config changed.
+2024-04-30 15:28:59.250 [info] Repo file:///home/I40S/.config has already been setup.

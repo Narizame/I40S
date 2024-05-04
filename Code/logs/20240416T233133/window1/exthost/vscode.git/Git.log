@@ -1,0 +1,37 @@
+2024-04-16 23:31:36.874 [info] Log level: Info
+2024-04-16 23:31:36.874 [info] Validating found git in: "git"
+2024-04-16 23:31:36.874 [info] Using git "2.44.0" from "git"
+2024-04-16 23:31:36.874 [info] > git rev-parse --show-toplevel [20ms]
+2024-04-16 23:31:36.874 [info] > git rev-parse --git-dir --git-common-dir [131ms]
+2024-04-16 23:31:36.874 [info] Open repository: /home/I40S/.config
+2024-04-16 23:31:36.875 [info] > git rev-parse --show-toplevel [38ms]
+2024-04-16 23:31:36.875 [info] > git config --get commit.template [46ms]
+2024-04-16 23:31:36.882 [info] > git rev-parse --show-toplevel [96ms]
+2024-04-16 23:31:36.902 [info] > git rev-parse --show-toplevel [9ms]
+2024-04-16 23:31:36.902 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [21ms]
+2024-04-16 23:31:36.910 [info] > git rev-parse --show-toplevel [3ms]
+2024-04-16 23:31:37.154 [info] > git check-ignore -v -z --stdin [17ms]
+2024-04-16 23:31:37.382 [info] > git status -z -uall [448ms] (cancelled)
+2024-04-16 23:31:37.382 [info] > git show --textconv :eww/eww.scss [9ms]
+2024-04-16 23:31:37.400 [info] > git ls-files --stage -- /home/I40S/.config/eww/eww.scss [22ms]
+2024-04-16 23:31:37.431 [info] > git cat-file -s 1e12bf05875680a351f16ea5207a1c5d9292f5d3 [26ms]
+2024-04-16 23:31:38.042 [info] > git config --local branch.main.github-pr-owner-number [51ms]
+2024-04-16 23:31:38.042 [warning] git config failed: Failed to execute git
+2024-04-16 23:31:38.525 [info] > git show --textconv :eww/scss/workspaces.scss [8ms]
+2024-04-16 23:31:38.527 [info] > git ls-files --stage -- /home/I40S/.config/eww/scss/workspaces.scss [5ms]
+2024-04-16 23:31:38.580 [info] > git cat-file -s 9fa3176d1b4d4c11c19145fa479eddcc00408cbf [48ms]
+2024-04-16 23:31:39.196 [info] > git show --textconv :eww/scss/weather.scss [9ms]
+2024-04-16 23:31:39.197 [info] > git ls-files --stage -- /home/I40S/.config/eww/scss/weather.scss [4ms]
+2024-04-16 23:31:39.205 [info] > git cat-file -s 8dabda4fe4762402d3728b6371170bd18ef865e0 [1ms]
+2024-04-16 23:31:47.953 [info] > git merge-base refs/heads/main refs/remotes/origin/main [759ms]
+2024-04-16 23:31:47.961 [info] > git config --get commit.template [8ms]
+2024-04-16 23:31:47.967 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [8ms]
+2024-04-16 23:31:47.978 [info] > git diff --name-status -z --diff-filter=ADMR 824edd8fb9fb510089b60ca32a6560b43971bbb4...refs/remotes/origin/main [6ms]
+2024-04-16 23:31:47.979 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-04-16 23:31:48.179 [info] > git status -z -uall [195ms] (cancelled)
+2024-04-16 23:36:37.508 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-16 23:36:37.508 [warning] git config failed: Failed to execute git
+2024-04-16 23:41:37.520 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-16 23:41:37.520 [warning] git config failed: Failed to execute git
+2024-04-16 23:46:37.531 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-16 23:46:37.531 [warning] git config failed: Failed to execute git

@@ -1,0 +1,4 @@
+2024-04-18 19:15:12.591 [info] Extension host with pid 4430 started
+2024-04-18 19:15:12.591 [info] Skipping acquiring lock for /home/I40S/.config/Code/User/workspaceStorage/0da512fa94e310959a1213ab017fd88c.
+2024-04-18 19:15:12.752 [info] Extension host terminating: renderer closed the MessagePort
+2024-04-18 19:15:12.753 [info] Extension host with pid 4430 exiting with code 0

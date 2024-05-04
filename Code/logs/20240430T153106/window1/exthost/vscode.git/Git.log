@@ -1,0 +1,260 @@
+2024-04-30 15:31:10.408 [info] Log level: Info
+2024-04-30 15:31:10.408 [info] Validating found git in: "git"
+2024-04-30 15:31:10.408 [info] Using git "2.44.0" from "git"
+2024-04-30 15:31:10.408 [info] > git rev-parse --show-toplevel [12ms]
+2024-04-30 15:31:10.408 [info] > git rev-parse --git-dir --git-common-dir [4ms]
+2024-04-30 15:31:10.408 [info] Open repository: /home/I40S/.config
+2024-04-30 15:31:10.408 [info] > git rev-parse --show-toplevel [263ms]
+2024-04-30 15:31:10.408 [info] > git config --get commit.template [271ms]
+2024-04-30 15:31:10.741 [info] > git rev-parse --show-toplevel [324ms]
+2024-04-30 15:31:10.834 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [116ms]
+2024-04-30 15:31:10.837 [info] > git check-ignore -v -z --stdin [28ms]
+2024-04-30 15:31:10.838 [info] > git rev-parse --show-toplevel [22ms]
+2024-04-30 15:31:10.864 [info] > git rev-parse --show-toplevel [11ms]
+2024-04-30 15:31:10.876 [info] > git rev-parse --show-toplevel [6ms]
+2024-04-30 15:31:11.000 [info] > git rev-parse --show-toplevel [117ms]
+2024-04-30 15:31:11.060 [info] > git rev-parse --show-toplevel [16ms]
+2024-04-30 15:31:11.236 [info] > git rev-parse --show-toplevel [163ms]
+2024-04-30 15:31:11.435 [info] > git rev-parse --show-toplevel [160ms]
+2024-04-30 15:31:11.622 [info] > git rev-parse --show-toplevel [21ms]
+2024-04-30 15:31:11.641 [info] > git status -z -uall [777ms] (cancelled)
+2024-04-30 15:31:11.643 [info] > git rev-parse --show-toplevel [8ms]
+2024-04-30 15:31:11.655 [info] > git rev-parse --show-toplevel [3ms]
+2024-04-30 15:31:11.681 [info] > git rev-parse --show-toplevel [17ms]
+2024-04-30 15:31:11.720 [info] > git rev-parse --show-toplevel [33ms]
+2024-04-30 15:31:11.738 [info] > git rev-parse --show-toplevel [7ms]
+2024-04-30 15:31:11.757 [info] > git rev-parse --show-toplevel [5ms]
+2024-04-30 15:31:11.773 [info] > git rev-parse --show-toplevel [3ms]
+2024-04-30 15:31:11.793 [info] > git rev-parse --show-toplevel [9ms]
+2024-04-30 15:31:11.804 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:11.817 [info] > git rev-parse --show-toplevel [4ms]
+2024-04-30 15:31:11.826 [info] > git rev-parse --show-toplevel [3ms]
+2024-04-30 15:31:11.841 [info] > git rev-parse --show-toplevel [5ms]
+2024-04-30 15:31:11.883 [info] > git rev-parse --show-toplevel [35ms]
+2024-04-30 15:31:11.928 [info] > git rev-parse --show-toplevel [32ms]
+2024-04-30 15:31:11.953 [info] > git rev-parse --show-toplevel [15ms]
+2024-04-30 15:31:12.039 [info] > git rev-parse --show-toplevel [44ms]
+2024-04-30 15:31:12.223 [info] > git rev-parse --show-toplevel [77ms]
+2024-04-30 15:31:12.239 [info] > git rev-parse --show-toplevel [8ms]
+2024-04-30 15:31:12.251 [info] > git rev-parse --show-toplevel [3ms]
+2024-04-30 15:31:12.273 [info] > git rev-parse --show-toplevel [3ms]
+2024-04-30 15:31:12.281 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.288 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.296 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.306 [info] > git rev-parse --show-toplevel [3ms]
+2024-04-30 15:31:12.321 [info] > git rev-parse --show-toplevel [6ms]
+2024-04-30 15:31:12.330 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.337 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.344 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.351 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.360 [info] > git rev-parse --show-toplevel [4ms]
+2024-04-30 15:31:12.368 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.376 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.383 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.391 [info] > git rev-parse --show-toplevel [1ms]
+2024-04-30 15:31:12.399 [info] > git rev-parse --show-toplevel [1ms]
+2024-04-30 15:31:12.406 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.414 [info] > git rev-parse --show-toplevel [3ms]
+2024-04-30 15:31:12.422 [info] > git rev-parse --show-toplevel [3ms]
+2024-04-30 15:31:12.431 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.445 [info] > git rev-parse --show-toplevel [5ms]
+2024-04-30 15:31:12.461 [info] > git rev-parse --show-toplevel [7ms]
+2024-04-30 15:31:12.468 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.475 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.483 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.490 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.500 [info] > git rev-parse --show-toplevel [3ms]
+2024-04-30 15:31:12.508 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-30 15:31:12.527 [info] > git show --textconv :hypr/hyprland.conf [11ms]
+2024-04-30 15:31:12.529 [info] > git ls-files --stage -- /home/I40S/.config/hypr/hyprland.conf [8ms]
+2024-04-30 15:31:12.537 [info] > git cat-file -s c1725f3370964b4586df6e73d3972a9a633bb631 [3ms]
+2024-04-30 15:31:13.256 [info] > git config --local branch.main.github-pr-owner-number [117ms]
+2024-04-30 15:31:13.256 [warning] git config failed: Failed to execute git
+2024-04-30 15:31:42.376 [info] > git merge-base refs/heads/main refs/remotes/origin/main [66ms]
+2024-04-30 15:31:42.381 [info] > git config --get commit.template [6ms]
+2024-04-30 15:31:42.384 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [4ms]
+2024-04-30 15:31:42.395 [info] > git diff --name-status -z --diff-filter=ADMR 824edd8fb9fb510089b60ca32a6560b43971bbb4...refs/remotes/origin/main [6ms]
+2024-04-30 15:31:42.845 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [450ms]
+2024-04-30 15:31:43.222 [info] > git status -z -uall [370ms] (cancelled)
+2024-04-30 15:36:12.273 [info] > git config --local branch.main.github-pr-owner-number [0ms]
+2024-04-30 15:36:12.273 [warning] git config failed: Failed to execute git
+2024-04-30 15:41:12.283 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 15:41:12.283 [warning] git config failed: Failed to execute git
+2024-04-30 15:46:12.295 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 15:46:12.331 [warning] git config failed: Failed to execute git
+2024-04-30 15:51:12.342 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 15:51:12.343 [warning] git config failed: Failed to execute git
+2024-04-30 15:56:12.353 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 15:56:12.353 [warning] git config failed: Failed to execute git
+2024-04-30 16:01:12.363 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 16:01:12.363 [warning] git config failed: Failed to execute git
+2024-04-30 16:06:12.373 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 16:06:12.373 [warning] git config failed: Failed to execute git
+2024-04-30 16:11:12.385 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 16:11:12.385 [warning] git config failed: Failed to execute git
+2024-04-30 16:16:12.396 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 16:16:12.396 [warning] git config failed: Failed to execute git
+2024-04-30 16:21:12.405 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 16:21:12.405 [warning] git config failed: Failed to execute git
+2024-04-30 16:26:12.414 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 16:26:12.414 [warning] git config failed: Failed to execute git
+2024-04-30 16:31:12.425 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 16:31:12.425 [warning] git config failed: Failed to execute git
+2024-04-30 16:36:12.436 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 16:36:12.436 [warning] git config failed: Failed to execute git
+2024-04-30 16:41:12.446 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 16:41:12.446 [warning] git config failed: Failed to execute git
+2024-04-30 16:46:12.458 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 16:46:12.458 [warning] git config failed: Failed to execute git
+2024-04-30 16:51:12.466 [info] > git config --local branch.main.github-pr-owner-number [0ms]
+2024-04-30 16:51:12.466 [warning] git config failed: Failed to execute git
+2024-04-30 16:56:12.478 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 16:56:12.478 [warning] git config failed: Failed to execute git
+2024-04-30 17:01:12.489 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 17:01:12.489 [warning] git config failed: Failed to execute git
+2024-04-30 17:06:12.501 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 17:06:12.501 [warning] git config failed: Failed to execute git
+2024-04-30 17:11:12.511 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 17:11:12.511 [warning] git config failed: Failed to execute git
+2024-04-30 17:16:12.523 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 17:16:12.523 [warning] git config failed: Failed to execute git
+2024-04-30 17:21:12.535 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 17:21:12.535 [warning] git config failed: Failed to execute git
+2024-04-30 17:26:12.546 [info] > git config --local branch.main.github-pr-owner-number [0ms]
+2024-04-30 17:26:12.546 [warning] git config failed: Failed to execute git
+2024-04-30 17:31:12.557 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 17:31:12.557 [warning] git config failed: Failed to execute git
+2024-04-30 17:36:12.565 [info] > git config --local branch.main.github-pr-owner-number [0ms]
+2024-04-30 17:36:12.565 [warning] git config failed: Failed to execute git
+2024-04-30 17:41:12.576 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 17:41:12.576 [warning] git config failed: Failed to execute git
+2024-04-30 17:46:12.588 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 17:46:12.588 [warning] git config failed: Failed to execute git
+2024-04-30 17:51:12.599 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 17:51:12.599 [warning] git config failed: Failed to execute git
+2024-04-30 17:56:12.610 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 17:56:12.610 [warning] git config failed: Failed to execute git
+2024-04-30 18:01:12.622 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 18:01:12.622 [warning] git config failed: Failed to execute git
+2024-04-30 18:06:12.633 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 18:06:12.634 [warning] git config failed: Failed to execute git
+2024-04-30 18:11:12.644 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 18:11:12.644 [warning] git config failed: Failed to execute git
+2024-04-30 18:16:12.653 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 18:16:12.653 [warning] git config failed: Failed to execute git
+2024-04-30 18:21:12.665 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 18:21:12.665 [warning] git config failed: Failed to execute git
+2024-04-30 18:26:12.676 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 18:26:12.676 [warning] git config failed: Failed to execute git
+2024-04-30 18:31:12.687 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 18:31:12.687 [warning] git config failed: Failed to execute git
+2024-04-30 18:36:12.698 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 18:36:12.698 [warning] git config failed: Failed to execute git
+2024-04-30 18:41:12.709 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 18:41:12.709 [warning] git config failed: Failed to execute git
+2024-04-30 18:46:12.720 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 18:46:12.720 [warning] git config failed: Failed to execute git
+2024-04-30 18:51:12.731 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 18:51:12.731 [warning] git config failed: Failed to execute git
+2024-04-30 18:56:12.742 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 18:56:12.742 [warning] git config failed: Failed to execute git
+2024-04-30 19:01:12.753 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 19:01:12.753 [warning] git config failed: Failed to execute git
+2024-04-30 19:06:12.765 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 19:06:12.765 [warning] git config failed: Failed to execute git
+2024-04-30 19:11:12.773 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 19:11:12.773 [warning] git config failed: Failed to execute git
+2024-04-30 19:16:12.783 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 19:16:12.783 [warning] git config failed: Failed to execute git
+2024-04-30 19:21:12.795 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 19:21:12.795 [warning] git config failed: Failed to execute git
+2024-04-30 19:26:12.806 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 19:26:12.806 [warning] git config failed: Failed to execute git
+2024-04-30 19:31:12.813 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 19:31:12.813 [warning] git config failed: Failed to execute git
+2024-04-30 19:36:12.824 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 19:36:12.824 [warning] git config failed: Failed to execute git
+2024-04-30 19:41:12.835 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 19:41:12.835 [warning] git config failed: Failed to execute git
+2024-04-30 19:46:12.846 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 19:46:12.846 [warning] git config failed: Failed to execute git
+2024-04-30 19:51:12.856 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 19:51:12.856 [warning] git config failed: Failed to execute git
+2024-04-30 19:56:12.864 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 19:56:12.864 [warning] git config failed: Failed to execute git
+2024-04-30 20:01:12.871 [info] > git config --local branch.main.github-pr-owner-number [0ms]
+2024-04-30 20:01:12.871 [warning] git config failed: Failed to execute git
+2024-04-30 20:06:12.881 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 20:06:12.881 [warning] git config failed: Failed to execute git
+2024-04-30 20:11:12.892 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 20:11:12.892 [warning] git config failed: Failed to execute git
+2024-04-30 20:16:12.901 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 20:16:12.901 [warning] git config failed: Failed to execute git
+2024-04-30 20:21:12.914 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 20:21:12.914 [warning] git config failed: Failed to execute git
+2024-04-30 20:26:12.927 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 20:26:12.927 [warning] git config failed: Failed to execute git
+2024-04-30 20:31:12.935 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 20:31:12.935 [warning] git config failed: Failed to execute git
+2024-04-30 20:36:12.948 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 20:36:12.949 [warning] git config failed: Failed to execute git
+2024-04-30 20:41:12.960 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 20:41:12.960 [warning] git config failed: Failed to execute git
+2024-04-30 20:46:12.973 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 20:46:12.973 [warning] git config failed: Failed to execute git
+2024-04-30 20:51:12.986 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 20:51:12.986 [warning] git config failed: Failed to execute git
+2024-04-30 20:56:12.999 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 20:56:12.999 [warning] git config failed: Failed to execute git
+2024-04-30 21:01:13.010 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 21:01:13.010 [warning] git config failed: Failed to execute git
+2024-04-30 21:06:13.023 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 21:06:13.023 [warning] git config failed: Failed to execute git
+2024-04-30 21:11:13.036 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 21:11:13.036 [warning] git config failed: Failed to execute git
+2024-04-30 21:16:13.049 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 21:16:13.049 [warning] git config failed: Failed to execute git
+2024-04-30 21:21:13.062 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 21:21:13.062 [warning] git config failed: Failed to execute git
+2024-04-30 21:26:13.075 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 21:26:13.075 [warning] git config failed: Failed to execute git
+2024-04-30 21:31:13.086 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 21:31:13.086 [warning] git config failed: Failed to execute git
+2024-04-30 21:36:13.100 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 21:36:13.100 [warning] git config failed: Failed to execute git
+2024-04-30 21:41:13.112 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 21:41:13.112 [warning] git config failed: Failed to execute git
+2024-04-30 21:46:13.125 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 21:46:13.125 [warning] git config failed: Failed to execute git
+2024-04-30 21:51:13.138 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 21:51:13.138 [warning] git config failed: Failed to execute git
+2024-04-30 21:56:13.151 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 21:56:13.151 [warning] git config failed: Failed to execute git
+2024-04-30 22:01:13.163 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 22:01:13.163 [warning] git config failed: Failed to execute git
+2024-04-30 22:06:13.176 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 22:06:13.176 [warning] git config failed: Failed to execute git
+2024-04-30 22:11:13.189 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 22:11:13.189 [warning] git config failed: Failed to execute git
+2024-04-30 22:16:13.202 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 22:16:13.202 [warning] git config failed: Failed to execute git
+2024-04-30 22:21:13.214 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 22:21:13.215 [warning] git config failed: Failed to execute git
+2024-04-30 22:26:13.226 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 22:26:13.227 [warning] git config failed: Failed to execute git
+2024-04-30 22:31:13.238 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 22:31:13.238 [warning] git config failed: Failed to execute git
+2024-04-30 22:36:13.250 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 22:36:13.250 [warning] git config failed: Failed to execute git
+2024-04-30 22:41:13.261 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 22:41:13.262 [warning] git config failed: Failed to execute git
+2024-04-30 22:46:13.274 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 22:46:13.274 [warning] git config failed: Failed to execute git
+2024-04-30 22:51:13.286 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 22:51:13.286 [warning] git config failed: Failed to execute git
+2024-04-30 22:56:13.297 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 22:56:13.298 [warning] git config failed: Failed to execute git
+2024-04-30 23:01:13.309 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-30 23:01:13.309 [warning] git config failed: Failed to execute git
+2024-04-30 23:06:13.320 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-30 23:06:13.320 [warning] git config failed: Failed to execute git

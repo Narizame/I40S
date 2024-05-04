@@ -1,0 +1,29 @@
+2024-05-01 11:29:53.792 [warning] /home/I40S/.ssh/config: ENOENT: no such file or directory, open '/home/I40S/.ssh/config'
+2024-05-01 11:29:53.792 [info] Activation> Extension version: 0.86.1
+2024-05-01 11:29:54.223 [info] Looking for git repository
+2024-05-01 11:29:54.223 [info] Found 0 repositories during activation
+2024-05-01 11:29:54.223 [info] Git repository found, initializing review manager and pr tree view.
+2024-05-01 11:29:54.228 [info] Registering git provider
+2024-05-01 11:29:54.713 [info] Git initialization state changed: state=initialized
+2024-05-01 11:29:54.713 [info] Review+0> Validate state in progress
+2024-05-01 11:29:54.713 [info] Review+0> Validating state...
+2024-05-01 11:29:54.722 [info] Found GitHub remote for folder /home/I40S/.config
+2024-05-01 11:29:55.105 [info] Trying to use globalState for assignableUsers.
+2024-05-01 11:29:55.182 [info] Review+0> No matching pull request metadata found locally for current branch main
+2024-05-01 11:29:55.330 [info] Using globalState assignableUsers for 1.
+2024-05-01 11:29:55.572 [info] Review+0> No matching pull request metadata found on GitHub for current branch main
+2024-05-01 11:30:33.844 [info] Repo state for file:///home/I40S/.config changed.
+2024-05-01 11:30:33.844 [info] Repo file:///home/I40S/.config has already been setup.
+2024-05-01 12:14:32.933 [warning] /home/I40S/.ssh/config: ENOENT: no such file or directory, open '/home/I40S/.ssh/config'
+2024-05-01 12:14:32.933 [info] Activation> Extension version: 0.86.1
+2024-05-01 12:14:33.479 [info] Looking for git repository
+2024-05-01 12:14:33.479 [info] Found 0 repositories during activation
+2024-05-01 12:14:33.479 [info] Git repository found, initializing review manager and pr tree view.
+2024-05-01 12:14:33.484 [info] Registering git provider
+2024-05-01 12:14:33.484 [info] Review+0> Validate state in progress
+2024-05-01 12:14:33.484 [info] Review+0> Validating state...
+2024-05-01 12:14:33.534 [info] Found GitHub remote for folder /home/I40S/.config
+2024-05-01 12:14:33.880 [info] Trying to use globalState for assignableUsers.
+2024-05-01 12:14:33.939 [info] Review+0> No matching pull request metadata found locally for current branch main
+2024-05-01 12:14:33.956 [info] Using globalState assignableUsers for 1.
+2024-05-01 12:14:34.334 [info] Review+0> No matching pull request metadata found on GitHub for current branch main

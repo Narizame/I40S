@@ -1,0 +1,15 @@
+{
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.preferredDarkColorTheme": "Wal Bordered",
+    "workbench.preferredHighContrastColorTheme": "Wal Bordered",
+    "window.autoDetectColorScheme": true,
+    "window.titleBarStyle": "custom",
+    "window.dialogStyle": "custom",
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": 2,
+    "editor.fontWeight": "bold",
+    "editor.renderWhitespace": "none",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "workbench.productIconTheme": "bongocat"
+}

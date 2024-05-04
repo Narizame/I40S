@@ -1,6 +1,0 @@
-2024-04-11 11:28:57.774 [info] Started local extension host with pid 50325.
-2024-04-11 11:28:58.559 [error] [Extension Host] (node:50325) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
-(Use `exe --trace-deprecation ...` to show where the warning was created)
-2024-04-11 11:29:18.425 [info] [perf] Render performance baseline is 24ms
-2024-04-11 11:29:18.672 [error] XHR failed: Error: XHR failed
-    at S.onerror (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:97:2011)

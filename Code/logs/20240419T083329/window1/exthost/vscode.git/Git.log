@@ -1,0 +1,20 @@
+2024-04-19 08:33:32.904 [info] Log level: Info
+2024-04-19 08:33:32.905 [info] Validating found git in: "git"
+2024-04-19 08:33:32.905 [info] Using git "2.44.0" from "git"
+2024-04-19 08:33:32.905 [info] > git rev-parse --show-toplevel [11ms]
+2024-04-19 08:33:32.905 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2024-04-19 08:33:32.905 [info] Open repository: /home/I40S/.config
+2024-04-19 08:33:32.921 [info] > git rev-parse --show-toplevel [7ms]
+2024-04-19 08:33:32.922 [info] > git config --get commit.template [12ms]
+2024-04-19 08:33:33.196 [info] > git rev-parse --show-toplevel [116ms]
+2024-04-19 08:33:33.234 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [48ms]
+2024-04-19 08:33:33.239 [info] > git rev-parse --show-toplevel [23ms]
+2024-04-19 08:33:33.356 [info] > git rev-parse --show-toplevel [112ms]
+2024-04-19 08:33:33.481 [info] > git show --textconv :eww/scss/weather.scss [30ms]
+2024-04-19 08:33:33.482 [info] > git ls-files --stage -- /home/I40S/.config/eww/scss/weather.scss [27ms]
+2024-04-19 08:33:33.508 [info] > git cat-file -s 8dabda4fe4762402d3728b6371170bd18ef865e0 [22ms]
+2024-04-19 08:33:33.650 [info] > git check-ignore -v -z --stdin [12ms]
+2024-04-19 08:33:33.922 [info] > git status -z -uall [487ms] (cancelled)
+2024-04-19 08:33:40.417 [info] > git show --textconv :eww/eww.scss [19ms]
+2024-04-19 08:33:40.418 [info] > git ls-files --stage -- /home/I40S/.config/eww/eww.scss [3ms]
+2024-04-19 08:33:40.427 [info] > git cat-file -s 1e12bf05875680a351f16ea5207a1c5d9292f5d3 [3ms]

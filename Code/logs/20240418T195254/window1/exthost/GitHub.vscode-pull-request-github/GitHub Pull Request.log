@@ -1,0 +1,15 @@
+2024-04-18 19:52:57.330 [warning] /home/I40S/.ssh/config: ENOENT: no such file or directory, open '/home/I40S/.ssh/config'
+2024-04-18 19:52:57.330 [info] Activation> Extension version: 0.86.1
+2024-04-18 19:52:57.609 [info] Looking for git repository
+2024-04-18 19:52:57.609 [info] Found 0 repositories during activation
+2024-04-18 19:52:57.609 [info] Git repository found, initializing review manager and pr tree view.
+2024-04-18 19:52:57.612 [info] Registering git provider
+2024-04-18 19:52:57.612 [info] Review+0> Validate state in progress
+2024-04-18 19:52:57.612 [info] Review+0> Validating state...
+2024-04-18 19:52:57.620 [info] Found GitHub remote for folder /home/I40S/.config
+2024-04-18 19:52:57.942 [info] Trying to use globalState for assignableUsers.
+2024-04-18 19:52:57.984 [info] Review+0> No matching pull request metadata found locally for current branch main
+2024-04-18 19:52:58.000 [info] Using globalState assignableUsers for 1.
+2024-04-18 19:52:58.311 [info] Review+0> No matching pull request metadata found on GitHub for current branch main
+2024-04-18 19:53:04.827 [info] Repo state for file:///home/I40S/.config changed.
+2024-04-18 19:53:04.827 [info] Repo file:///home/I40S/.config has already been setup.

@@ -1,0 +1,17 @@
+.indicator {
+    background-color: $surfaceVariant;
+    border-radius: 1rem;
+    padding: 3 0rem;
+    margin: 55 0rem;
+    margin-right: 0rem;
+    transition: 0.3s;
+}
+
+.indicator-icon {
+    margin: 5 0rem;
+    font-size: 1.5rem;
+}
+
+.indicator:hover {
+    background-color: mix($surfaceVariant, $onSurfaceVariant, 70%);
+}

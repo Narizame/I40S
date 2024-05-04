@@ -1,2 +1,0 @@
-2024-04-11 11:29:18.672 [error] browser #1: https://api.github.com/copilot_internal/user - error GET XHR failed
-2024-04-11 11:29:20.255 [error] browser #2: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST XHR failed
